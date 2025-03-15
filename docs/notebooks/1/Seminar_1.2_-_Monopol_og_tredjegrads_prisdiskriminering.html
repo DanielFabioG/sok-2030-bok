@@ -1,0 +1,1135 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Seminar 1.2: Monopol og tredje grads prisdiskriminering &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/1/Seminar_1.2_-_Monopol_og_tredjegrads_prisdiskriminering';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Seminar 2.1: Monopol og prisdiskriminering, to-delt tariff" href="../2/Seminar_2.1_-_Monopol_og_prisdiskriminering%2C_to-delt_tariff.html" />
+    <link rel="prev" title="Seminar 1: Optimal tilpasning ved monopol" href="Seminar_1.1_-_Optimal_tilpasning_ved_monopol.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Næringsøkonomi og konkurransestrategi
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Seminar_1.1_-_Optimal_tilpasning_ved_monopol.html">Seminar 1: Optimal tilpasning ved monopol</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Seminar 1.2: Monopol og tredje grads prisdiskriminering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/Seminar_2.1_-_Monopol_og_prisdiskriminering%2C_to-delt_tariff.html">Seminar 2.1: Monopol og prisdiskriminering, to-delt tariff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/Seminar_2.2_-_Monopol_og_produktdifferensiering.html">Seminar 2.2: Monopol og produktdifferensiering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3/Seminar_3.1_-_Cournot_modell_med_symmetriske_bedrifter.html">Seminar 3.1: Oligopolmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3/Seminar_3.2_-_Cournot_modell_med_asymmetriske_bedrifter.html">Seminar 3.2: Oligopolmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html">Løsningsforslag monopol og tredjegrads prisdiskriminering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_2.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_2.html">Løsningsforslag - monopol og produktdifferensiering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_3.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_3.html">Løsningsforslag Cournot modell</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/1/Seminar_1.2_-_Monopol_og_tredjegrads_prisdiskriminering.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/1/Seminar_1.2_-_Monopol_og_tredjegrads_prisdiskriminering.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Seminar 1.2: Monopol og tredje grads prisdiskriminering</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-ved-tredje-grads-prisdiskriminering-usa">Optimal tilpasning ved tredje grads prisdiskriminering USA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisering-av-pris-og-mengde-i-usa">Visualisering av pris og mengde i USA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-ved-tredje-grads-prisdiskriminering-europa">Optimal tilpasning ved tredje grads prisdiskriminering Europa</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisering-av-pris-og-mengde-i-europa">Visualisering av pris og mengde i Europa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-ved-uniform-prising">Optimal tilpasning ved uniform prising</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisering-av-pris-og-mengde-ved-uniform-prising">Visualisering av pris og mengde ved uniform prising</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvorfor-prisdiskriminering-gir-hoyere-profitt">Hvorfor prisdiskriminering gir høyere profitt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-monopol-og-tredjegrads-prisdiskriminering">Oppgave monopol og tredjegrads prisdiskriminering</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="seminar-1-2-monopol-og-tredje-grads-prisdiskriminering">
+<h1>Seminar 1.2: Monopol og tredje grads prisdiskriminering<a class="headerlink" href="#seminar-1-2-monopol-og-tredje-grads-prisdiskriminering" title="Link to this heading">#</a></h1>
+<p>Vi skal se på hvordan en monopolist kan maksimere profitten sin ved å diskriminere prisen på produktene sine.</p>
+<p>Betalingsvilligheten for boken “Harry Potter and the Deathly Hallows” vil være forskjellig for ulike grupper av mennesker. La oss anta to forskjellige markeder, USA og Europa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Etterpørselen for boken i USA er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_{USA} = 9 - \frac{P}{4}
+\]</div>
+<p>Etterpørselen for boken i Europa er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_{E} = 6 - \frac{P}{4}
+\]</div>
+<p>Først la oss regne ut invers etterspørsel for de to markedene. Dette gjør vi ved å løse for <span class="math notranslate nohighlight">\(P\)</span> i både <span class="math notranslate nohighlight">\(Q_{U}\)</span> og <span class="math notranslate nohighlight">\(Q_{E}\)</span>.</p>
+<p>For USA har vi invers etterspørsel:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{U} = 36 - 4Q
+\]</div>
+<p>For Europa er invers etterspørsel gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{E} = 24 - 4Q
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definerer symboler</span>
+<span class="n">P_U</span><span class="p">,</span> <span class="n">P_E</span><span class="p">,</span> <span class="n">Q_U</span><span class="p">,</span> <span class="n">Q_E</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;P_U P_E Q_U Q_E&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Definerer etterpørselsfunksjonene for begge markeder</span>
+<span class="n">Etterspørsel_U</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q_U</span><span class="p">,</span><span class="mi">9</span> <span class="o">-</span> <span class="p">(</span><span class="n">P_U</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">Etterspørsel_E</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q_E</span><span class="p">,</span><span class="mi">6</span> <span class="o">-</span> <span class="p">(</span><span class="n">P_E</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Etterspørsel_U</span><span class="p">,</span><span class="n">Etterspørsel_E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle Q_{U} = 9 - \frac{P_{U}}{4}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle Q_{E} = 6 - \frac{P_{E}}{4}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser begge for P</span>
+<span class="n">invers_U</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Etterspørsel_U</span><span class="p">,</span> <span class="n">P_U</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">invers_E</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Etterspørsel_E</span><span class="p">,</span> <span class="n">P_E</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">invers_U</span><span class="p">,</span><span class="n">invers_E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 36 - 4 Q_{U}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 24 - 4 Q_{E}\]</div>
+</div>
+</div>
+<section id="optimal-tilpasning-ved-tredje-grads-prisdiskriminering-usa">
+<h2>Optimal tilpasning ved tredje grads prisdiskriminering USA<a class="headerlink" href="#optimal-tilpasning-ved-tredje-grads-prisdiskriminering-usa" title="Link to this heading">#</a></h2>
+<p>For å maksimere profitten sin, må monopolisten sette prisen slik at marginalkostnaden (MC) er lik marginalinntekten (MR) , som vi har sett på tidligere. Marginalkostnaden er lik i begge markedene, og er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+MC = 4
+\]</div>
+<p>per produsert enhet (bok).</p>
+<p>Deretter finner vi marginalinntekt til USA ved å multiplisere invers etterspørsel <span class="math notranslate nohighlight">\(P_U(Q_U)\)</span> med <span class="math notranslate nohighlight">\(Q_U\)</span> og deriverer med hensyn til <span class="math notranslate nohighlight">\(Q_U\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+MR_U = 36 - 8Q_U
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multipliserer prisen med kvantumet for å finne totalinntekten</span>
+<span class="n">TR_U</span> <span class="o">=</span> <span class="n">invers_U</span><span class="o">*</span><span class="n">Q_U</span>
+<span class="n">TR_U</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle Q_{U} \left(36 - 4 Q_{U}\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deriverer totalinntekten med hensyn på kvantumet for å finne marginalinntekten</span>
+<span class="n">MR_U</span> <span class="o">=</span> <span class="n">TR_U</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Q_U</span><span class="p">)</span>
+<span class="n">MR_U</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 36 - 8 Q_{U}\]</div>
+</div>
+</div>
+<p>Nå har vi regnet ut marginalkostnaden og marginalinntekten for USA. For å finne optimal tilpasning for monopolisten i USA, må vi sette:</p>
+<div class="math notranslate nohighlight">
+\[
+MC_U = MR_U
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+36 - 8Q_U = 4
+\]</div>
+<p>Vi løser for <span class="math notranslate nohighlight">\(Q_U\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+Q{_U^*} = 4
+\]</div>
+<p>Nå kan vi finne prisen monopolisten setter i USA ved å sette <span class="math notranslate nohighlight">\(Q_U = 4\)</span> inn i invers etterspørsel <span class="math notranslate nohighlight">\(P_U(Q_U)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P{_U^*} = 36 - 4 \cdot 4 = 20
+\]</div>
+<p>Profitten til monopolisten i USA finnes ved å sette optimalt kvantum inn i totalinntekten og trekke fra marginalkostnad multiplisert ved optimalt kvantum:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_U = TR{_U^*} - MC \cdot Q{_U^*} = 80 - 4 \cdot 4 = 64
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># MC er konstant og lik 4</span>
+<span class="n">MC</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># Setter MR = MC for å finne likevektskvantumet</span>
+<span class="n">likevekt_U</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">MR_U</span><span class="p">,</span> <span class="n">MC</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">likevekt_U</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 36 - 8 Q_{U} = 4\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for kvantumet</span>
+<span class="n">likevekt_U_kv</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt_U</span><span class="p">,</span> <span class="n">Q_U</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Setter kvantumet inn i etterspørselsfunksjonen for å finne prisen</span>
+<span class="n">likevekt_U_pris</span> <span class="o">=</span> <span class="n">invers_U</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q_U</span><span class="p">,</span> <span class="n">likevekt_U_kv</span><span class="p">)</span>
+
+<span class="c1"># Finner profitten</span>
+<span class="n">profitt_U</span> <span class="o">=</span> <span class="n">TR_U</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q_U</span><span class="p">,</span> <span class="n">likevekt_U_kv</span><span class="p">)</span> <span class="o">-</span> <span class="n">MC</span><span class="o">*</span><span class="n">likevekt_U_kv</span>
+
+<span class="sa">f</span><span class="s1">&#39;Likevektskvantumet er </span><span class="si">{</span><span class="n">likevekt_U_kv</span><span class="si">}</span><span class="s1">, prisen er </span><span class="si">{</span><span class="n">likevekt_U_pris</span><span class="si">}</span><span class="s1"> og profitten blir </span><span class="si">{</span><span class="n">profitt_U</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Likevektskvantumet er 4, prisen er 20 og profitten blir 64&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualisering-av-pris-og-mengde-i-usa">
+<h2>Visualisering av pris og mengde i USA<a class="headerlink" href="#visualisering-av-pris-og-mengde-i-usa" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Invers etterspørsel funksjon</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">invers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">Q</span><span class="p">)</span>
+<span class="c1"># Marginalinntekt funksjon</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">marginal_rev</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">Q</span><span class="p">)</span>
+
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1">#funksjon for å skape akse</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_ax</span><span class="p">():</span>
+                <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Pris (P)&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Mengde (Q)&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+            
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_ax</span><span class="p">()</span>
+
+<span class="c1"># Plotter etterspørselskurven for USA</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">invers</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">Q</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Etterspørsel USA&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter marginalinntekten for USA</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">marginal_rev</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">Q</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Marginalinntekt USA&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter MC</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MC&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plotter likevektskvantumet</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">likevekt_U_kv</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">likevekt_U_pris</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter likevektsprisen</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">likevekt_U_pris</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">likevekt_U_kv</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9954137f4ed5f757f04223ded8744ebca77d44fadae86fc4060b46fe62b7e173.png" src="../../_images/9954137f4ed5f757f04223ded8744ebca77d44fadae86fc4060b46fe62b7e173.png" />
+</div>
+</div>
+<section id="optimal-tilpasning-ved-tredje-grads-prisdiskriminering-europa">
+<h3>Optimal tilpasning ved tredje grads prisdiskriminering Europa<a class="headerlink" href="#optimal-tilpasning-ved-tredje-grads-prisdiskriminering-europa" title="Link to this heading">#</a></h3>
+<p>For Europa har vi allerede regnet ut invers etterspørsel:</p>
+<div class="math notranslate nohighlight">
+\[
+P_E = 24 - 4Q_E
+\]</div>
+<p>Marginalkostnaden er lik i begge markedene, så her har Europa også marginalkostnad <span class="math notranslate nohighlight">\(MC = 4\)</span>.</p>
+<p>For å finne marginalinntekt til Europa, multipliserer vi invers etterspørsel <span class="math notranslate nohighlight">\(P_E(Q_E)\)</span> med <span class="math notranslate nohighlight">\(Q_E\)</span> og deriverer med hensyn til <span class="math notranslate nohighlight">\(Q_E\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+MR_E = 24 - 8Q_E
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multipliserer prisen med kvantumet for å finne totalinntekten for Europa</span>
+<span class="n">TR_E</span> <span class="o">=</span> <span class="n">invers_E</span><span class="o">*</span><span class="n">Q_E</span>
+<span class="n">TR_E</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle Q_{E} \left(24 - 4 Q_{E}\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deriverer totalinntekten med hensyn på kvantumet for å finne marginalinntekten</span>
+<span class="n">MR_E</span> <span class="o">=</span> <span class="n">TR_E</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Q_E</span><span class="p">)</span>
+<span class="n">MR_E</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 24 - 8 Q_{E}\]</div>
+</div>
+</div>
+<p>Nå har vi regnet ut marginalkostnaden og marginalinntekten for Europa. For å finne optimal tilpasning for monopolisten i Europa, må vi sette <span class="math notranslate nohighlight">\(MC_E = MR_E\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+24 - 8Q_E = 4
+\]</div>
+<p>Vi løser for <span class="math notranslate nohighlight">\(Q_E\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+Q{_E^*} = 2.5
+\]</div>
+<p>Nå kan vi finne prisen monopolisten setter i Europa ved å sette <span class="math notranslate nohighlight">\(Q_E = 2\)</span> inn i invers etterspørsel <span class="math notranslate nohighlight">\(P_E(Q_E)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P{_E^*} = 24 - 4 \cdot 2.5 = 14
+\]</div>
+<p>Profitten til monopolisten i Europa er gitt ved å sette inn optimalt kvantum i totalinntekten og trekke fra total kostnad:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_E = TR{_E^*} - MC \cdot Q{_E^*} = 35 - 4 \cdot 2.5 = 25
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for kvantumet til Europa</span>
+<span class="n">likevekt_E_kv</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">MR_E</span><span class="p">,</span> <span class="n">MC</span><span class="p">),</span> <span class="n">Q_E</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Setter kvantumet inn i etterspørselsfunksjonen for å finne prisen</span>
+<span class="n">likevekt_E_pris</span> <span class="o">=</span> <span class="n">invers_E</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q_E</span><span class="p">,</span> <span class="n">likevekt_E_kv</span><span class="p">)</span>
+
+<span class="c1"># Finner profitten</span>
+<span class="n">profitt_E</span> <span class="o">=</span> <span class="n">TR_E</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q_E</span><span class="p">,</span> <span class="n">likevekt_E_kv</span><span class="p">)</span> <span class="o">-</span> <span class="n">MC</span><span class="o">*</span><span class="n">likevekt_E_kv</span>
+
+<span class="sa">f</span><span class="s1">&#39;Likevektskvantumet er </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">likevekt_E_kv</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1">, prisen er </span><span class="si">{</span><span class="n">likevekt_E_pris</span><span class="si">}</span><span class="s1"> og profitten blir </span><span class="si">{</span><span class="n">profitt_E</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Likevektskvantumet er 2.5, prisen er 14 og profitten blir 25&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="visualisering-av-pris-og-mengde-i-europa">
+<h2>Visualisering av pris og mengde i Europa<a class="headerlink" href="#visualisering-av-pris-og-mengde-i-europa" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_ax</span><span class="p">()</span>
+
+<span class="c1"># Plotter etterspørselskurven for Europa</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">invers</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">Q</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Etterspørsel Europa&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter marginalinntekten for Europa</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">marginal_rev</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">Q</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Marginalinntekt Europa&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter MC</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MC&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plotter likevektskvantumet</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">likevekt_E_kv</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">likevekt_E_pris</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter likevektsprisen</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">likevekt_E_pris</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">likevekt_E_kv</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3e3673f81e6170d8f2cfcc157222c6c1c46794aa2e964e536045690371b24898.png" src="../../_images/3e3673f81e6170d8f2cfcc157222c6c1c46794aa2e964e536045690371b24898.png" />
+</div>
+</div>
+</section>
+<section id="optimal-tilpasning-ved-uniform-prising">
+<h2>Optimal tilpasning ved uniform prising<a class="headerlink" href="#optimal-tilpasning-ved-uniform-prising" title="Link to this heading">#</a></h2>
+<p>Til slutt ser vi på hvilken pris produsentene vil sette hvis de skal ha lik pris i begge markedene.</p>
+<p>For å finne optimal tilpasning ved uniform prising må vi aggregere etterspørselen fra USA og Europa. Total etterspørsel er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = Q_U + Q_E = 9 - \frac{P}{4} + 6 - \frac{P}{4} = 15 - \frac{P}{2}
+\]</div>
+<p>Vi kan finne total invers etterspørsel ved å løse den aggregerte etterspørsel for USA og Europa for P:</p>
+<div class="math notranslate nohighlight">
+\[
+P = 30 - 2Q
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I koden når vi aggregerer etterpørselen, så legger vi sammen kvantumet fra USA og Europa. Derfor bruker vi nå Q istedenfor Q U og Q E.</span>
+<span class="n">Q</span><span class="p">,</span><span class="n">P</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;Q P&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Etterspørsel_USA</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="mi">9</span> <span class="o">-</span> <span class="p">(</span><span class="n">P</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">Etterspørsel_EU</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="mi">6</span> <span class="o">-</span> <span class="p">(</span><span class="n">P</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Aggregerer etterpørselen</span>
+<span class="n">Etterspørsel_aggregert</span> <span class="o">=</span> <span class="n">Etterspørsel_USA</span><span class="o">.</span><span class="n">rhs</span> <span class="o">+</span> <span class="n">Etterspørsel_EU</span><span class="o">.</span><span class="n">rhs</span>
+
+<span class="n">Etterspørsel_aggregert</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 15 - \frac{P}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for prisen</span>
+<span class="n">invers_aggregert</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Etterspørsel_aggregert</span> <span class="o">-</span> <span class="n">Q</span><span class="p">,</span> <span class="n">P</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">invers_aggregert</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 30 - 2 Q\]</div>
+</div>
+</div>
+<p>Marginalkostnader og marginalinntekt for aggregert etterspørsel</p>
+<p>Vi antar at marginalkostnaden (MC) fortsatt er konstant, altså MC = 4.</p>
+<p>Totalinntekten (TR) for den aggregerte etterspørselen, med invers etterspørsel
+$<span class="math notranslate nohighlight">\(
+P = 30 - 2Q
+\)</span><span class="math notranslate nohighlight">\( 
+blir:
+\)</span><span class="math notranslate nohighlight">\(
+TR = P \cdot Q = (30 - 2Q)Q = 30Q - 2Q^2
+\)</span>$</p>
+<p>Marginalinntekten (MR) oppnås ved å derivere totalinntekten med hensyn på Q:
+$<span class="math notranslate nohighlight">\(
+MR = \frac{\partial (TR)}{\partial Q} = 30 - 4Q
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multipliserer prisen med kvantumet for å finne totalinntekten</span>
+<span class="n">TR</span> <span class="o">=</span> <span class="n">invers_aggregert</span><span class="o">*</span><span class="n">Q</span>
+<span class="n">TR</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle Q \left(30 - 2 Q\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deriverer totalinntekten med hensyn på kvantumet for å finne marginalinntekten</span>
+<span class="n">MR</span> <span class="o">=</span> <span class="n">TR</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+<span class="n">MR</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 30 - 4 Q\]</div>
+</div>
+</div>
+<p>Disse uttrykkene setter vi opp mot marginalkostnaden for å finne den optimale mengden som tidligere.</p>
+<p>For uniform prising (aggregert etterspørsel) setter vi marginalkostnaden lik marginalinntekten og får:</p>
+<div class="math notranslate nohighlight">
+\[
+30 - 4Q = 4
+\]</div>
+<p>Vi løser for <span class="math notranslate nohighlight">\(Q\)</span>:
+$<span class="math notranslate nohighlight">\(
+4Q = 30 – 4 = 26
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+Q^* = \frac{26}{4} = 6.5
+\]</div>
+<p>Nå kan vi finne prisen monopolisten setter ved uniform prising ved å sette <span class="math notranslate nohighlight">\(Q = 6.5\)</span> inn i invers etterspørsel <span class="math notranslate nohighlight">\(P = 30 - 2Q\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P^* = 30 - 2 \cdot 6.5 = 17
+\]</div>
+<p>Profitten til monopolisten ved uniform prising er gitt ved å sette inn optimalt kvantum i totalinntekten og trekke fra total kostnad:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi = TR^* - MC \cdot Q^* = 110.5 - 4 \cdot 6.5 = 84.5
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter MR = MC for å finne likevektskvantumet</span>
+<span class="n">likevekt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">MR</span><span class="p">,</span> <span class="n">MC</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">likevekt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 30 - 4 Q = 4\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for kvantumet</span>
+<span class="n">likevekt_kv</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt</span><span class="p">,</span> <span class="n">Q</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Setter kvantumet inn i etterspørselsfunksjonen for å finne prisen</span>
+<span class="n">likevekt_pris</span> <span class="o">=</span> <span class="n">invers_aggregert</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">likevekt_kv</span><span class="p">)</span>
+
+<span class="c1"># Finner profitten</span>
+<span class="n">profitt</span> <span class="o">=</span> <span class="n">TR</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">likevekt_kv</span><span class="p">)</span> <span class="o">-</span> <span class="n">MC</span><span class="o">*</span><span class="n">likevekt_kv</span>
+
+<span class="sa">f</span><span class="s1">&#39;Likevektskvantumet er </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">likevekt_kv</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1">, prisen er </span><span class="si">{</span><span class="n">likevekt_pris</span><span class="si">}</span><span class="s1"> og profitten blir </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">profitt</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Likevektskvantumet er 6.5, prisen er 17 og profitten blir 84.5&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Total profitt</span>
+<span class="n">total_profitt</span> <span class="o">=</span> <span class="n">profitt_U</span> <span class="o">+</span> <span class="n">profitt_E</span>
+
+<span class="c1"># Total profitt ved aggregering</span>
+<span class="n">profitt</span>
+
+<span class="c1"># Endring i profitt</span>
+<span class="n">endring_profitt</span> <span class="o">=</span> <span class="n">total_profitt</span> <span class="o">-</span> <span class="n">profitt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Profitten ved å holde markedene adskilt er </span><span class="si">{</span><span class="n">profitt_U</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">profitt_E</span><span class="si">}</span><span class="s1">, mens profitten ved å aggregerere markedene er </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">profitt</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1"> og endringen i profitt er </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">endring_profitt</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Profitten ved å holde markedene adskilt er 89, mens profitten ved å aggregerere markedene er 84.5 og endringen i profitt er 4.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualisering-av-pris-og-mengde-ved-uniform-prising">
+<h2>Visualisering av pris og mengde ved uniform prising<a class="headerlink" href="#visualisering-av-pris-og-mengde-ved-uniform-prising" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualisering av USA vs aggregering</span>
+
+<span class="c1"># Lager etterspørsel for P &lt; 24</span>
+<span class="n">Q_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="c1"># Lager etterspørsel for P &gt; 24</span>
+<span class="n">Q_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">3.001</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_ax</span><span class="p">()</span>
+
+<span class="c1"># Plotter etterspørselskurven for USA</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_1</span><span class="p">,</span> <span class="n">invers</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">Q_1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter aggregert etterspørsel</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_2</span><span class="p">,</span> <span class="n">invers</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">Q_2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Aggregert etterspørsel&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plotter marginalinntekten for USA</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_1</span><span class="p">,</span> <span class="n">marginal_rev</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">Q_1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter marginalinntekten for aggregert etterspørsel</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_2</span><span class="p">,</span> <span class="n">marginal_rev</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">Q_2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Marginalinntekt&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Plotter MC</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MC&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plotter likevektskvantumet</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">likevekt_kv</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">likevekt_pris</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter likevektsprisen</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">likevekt_pris</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">likevekt_kv</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plotter likevekt for P &lt; 24</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="c1"># Plotter likevekt for P &gt; 24</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">38</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/65b47f256af55e2300b062aa603bbfd1a044f44853c3ccfa40e920492abf8929.png" src="../../_images/65b47f256af55e2300b062aa603bbfd1a044f44853c3ccfa40e920492abf8929.png" />
+</div>
+</div>
+</section>
+<section id="hvorfor-prisdiskriminering-gir-hoyere-profitt">
+<h2>Hvorfor prisdiskriminering gir høyere profitt<a class="headerlink" href="#hvorfor-prisdiskriminering-gir-hoyere-profitt" title="Link to this heading">#</a></h2>
+<p>Prisdiskriminering gir høyere profitt fordi det tillater selgeren å fange opp mer av konsumentoverskuddet ved å tilpasse prisen til betalingsvilligheten i hvert marked.</p>
+<p>Dette fører til at selgeren kan selge flere enheter til høyere priser i markeder med høy betalingsvillighet og fortsatt selge i markeder med lavere betalingsvillighet uten å måtte senke prisen for alle kunder.</p>
+<p>I dette tilfellet ser vi at profitten ved prisdiskriminering er høyere enn ved uniform prising. Profitten ved prisdiskriminering er 96, mens profitten ved uniform prising er 84.5.</p>
+<p>En annen ting å legge merke til er at prisen i Europa er lavere enn prisen i USA. Dette er fordi etterspørselen i Europa er lavere enn i USA, og monopolisten må sette en lavere pris for å selge flere enheter i Europa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ved prisdiskriminering vil prisen i USA gå opp fra </span><span class="si">{</span><span class="n">likevekt_U_pris</span><span class="si">}</span><span class="s1"> til </span><span class="si">{</span><span class="n">likevekt_pris</span><span class="si">}</span><span class="s1"> og prisen i Europa vil gå ned fra </span><span class="si">{</span><span class="n">likevekt_E_pris</span><span class="si">}</span><span class="s1"> til </span><span class="si">{</span><span class="n">likevekt_pris</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ved prisdiskriminering vil prisen i USA gå opp fra 20 til 17 og prisen i Europa vil gå ned fra 14 til 17
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="oppgave-monopol-og-tredjegrads-prisdiskriminering">
+<h2>Oppgave monopol og tredjegrads prisdiskriminering<a class="headerlink" href="#oppgave-monopol-og-tredjegrads-prisdiskriminering" title="Link to this heading">#</a></h2>
+<p>a) Vis hvordan en monopolist, som tilbyr sitt produkt til ulike kundesegmenter eller i ulike geografiske områder (med ulik betalingsvillighet), kan bruke prismekanismen til å øke bedriftens lønnsomhet.</p>
+<p>Skriv svaret ditt her.</p>
+<p>b) Forklar hvordan de ulike markedstilpasninger til monopolbedriften vil påvirke det
+samfunnsøkonomiske overskuddet.</p>
+<p>Skriv svaret ditt her.</p>
+<p>Som styremedlem i hotellet på Sommarøy mener du at bedriften bør bruke prismekanismen til å maksimere sitt overskudd. Erfaringer viser at etterspørselen etter hotellrom er høyere i sommersesongen og noe lavere på vinteren. Hotellet er den eneste tilbyderen av hotellrom i dette området, og står ovenfor følgende etterspørsel:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = 4200 - P_{S}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+Q = 1500 - \frac{P_{V}}{2}
+\]</div>
+<p>Som følge av investeringer i nytt hotellbygg har bedriften faste kostander på NOK 2 millioner per år, og konstante variable kostnader på NOK 600 per rom (til vask av rom og sengetøy). Ledelsen ved hotellet skal gjøre en vurdering av sin prisstrategi, hvor de vurderer enten en uniform prising, med lik pris gjennom hele året, eller en diskriminering av pris for de ulike sesongene.</p>
+<p>c) Hvilken strategi vil du anbefale ledelsen? Hva blir overskuddet til bedriften ved de to ulike prisstrategiene?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Skriv svaret ditt her</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Seminar_1.1_-_Optimal_tilpasning_ved_monopol.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Seminar 1: Optimal tilpasning ved monopol</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../2/Seminar_2.1_-_Monopol_og_prisdiskriminering%2C_to-delt_tariff.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Seminar 2.1: Monopol og prisdiskriminering, to-delt tariff</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-ved-tredje-grads-prisdiskriminering-usa">Optimal tilpasning ved tredje grads prisdiskriminering USA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisering-av-pris-og-mengde-i-usa">Visualisering av pris og mengde i USA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-ved-tredje-grads-prisdiskriminering-europa">Optimal tilpasning ved tredje grads prisdiskriminering Europa</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisering-av-pris-og-mengde-i-europa">Visualisering av pris og mengde i Europa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-ved-uniform-prising">Optimal tilpasning ved uniform prising</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisering-av-pris-og-mengde-ved-uniform-prising">Visualisering av pris og mengde ved uniform prising</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvorfor-prisdiskriminering-gir-hoyere-profitt">Hvorfor prisdiskriminering gir høyere profitt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-monopol-og-tredjegrads-prisdiskriminering">Oppgave monopol og tredjegrads prisdiskriminering</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -57,9 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/4/Seminar_4.2_-_Bertrand_konkurranse_og_differensiering';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Løsningsforslag monopol og tredjegrads prisdiskriminering" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html" />
+    <link rel="prev" title="Seminar 4.1: Bertrand modell med kapasitetsbegrensninger" href="Seminar_4.1_-_Bertrand_modell_med_kapasitetsbegrensninger.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,13 +181,15 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../1/Seminar_1.1_-_Optimal_tilpasning_ved_monopol.html">Seminar 1.1: Optimal tilpasning ved monopol</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1/Seminar_1.2_-_Monopol_og_tredjegrads_prisdiskriminering.html">Seminar 1.2: Monopol og tredje grads prisdiskriminering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2/Seminar_2.1_-_Monopol_og_prisdiskriminering%2C_to-delt_tariff.html">Seminar 2.1: Monopol og prisdiskriminering, to-delt tariff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2/Seminar_2.2_-_Monopol_og_produktdifferensiering.html">Seminar 2.2: Monopol og produktdifferensiering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3/Seminar_3.1_-_Cournot_modell_med_symmetriske_bedrifter.html">Seminar 3.1: Cournot-modellen med symmetriske bedrifter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3/Seminar_3.2_-_Cournot_modell_med_asymmetriske_bedrifter.html">Seminar 3.2: Cournot modell med asymmetriske bedrifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seminar_4.1_-_Bertrand_modell_med_kapasitetsbegrensninger.html">Seminar 4.1: Bertrand modell med kapasitetsbegrensninger</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Seminar 4.2: Bertrand konkurranse og differensierte produkter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html">Løsningsforslag monopol og tredjegrads prisdiskriminering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_2.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_2.html">Løsningsforslag - monopol og produktdifferensiering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_3.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_3.html">Løsningsforslag Cournot modell</a></li>
@@ -385,6 +389,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bertrand-konkurranse-og-differensiering">Bertrand konkurranse og differensiering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisering-av-hotelling-modellen">Visualisering av Hotelling-modellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bertrand-konkurranse-og-ettersporsel">Bertrand-konkurranse og etterspørsel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel">Eksempel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-bertrand-konkurranse-og-differensiering">Oppgave Bertrand konkurranse og differensiering</a></li>
 </ul>
             </nav>
@@ -403,16 +410,436 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="bertrand-konkurranse-og-differensiering">
 <h2>Bertrand konkurranse og differensiering<a class="headerlink" href="#bertrand-konkurranse-og-differensiering" title="Link to this heading">#</a></h2>
-<p>Vi skal se på en Bertrand modell hvor to bedrifter diffensierer produktene sine, et eksempel på dette kan være Coca Cola og Pepsi. Vi skal se på hvordan prisen påvirkes av differensiering og hvordan dette påvirker profitten til bedriftene.</p>
-<p>I motsetning til Cournot, så konkurrerer bedriftene i Bertrand modellen på pris. Dette betyr at bedriftene setter prisen sin og kundene kjøper produktet fra den bedriften som har lavest pris. Dette betyr at bedriftene må sette prisen sin lik grensekostnaden sin for å maksimere profitten.</p>
-<p>Vi antar vi har en etterspørsel gitt ved:</p>
-<p>$$</p>
+<p>Vi antar at to bedrifter konkurrerer om forbrukere i en lineær by med jevnt fordelte forbrukere langs intervallet <span class="math notranslate nohighlight">\([0,1]\)</span>. Bedrift 1 og bedrift 2 lokaliserer seg henholdsvis ved <span class="math notranslate nohighlight">\(x=0\)</span> og <span class="math notranslate nohighlight">\(x=1\)</span>. For en forbruker med lokalisering <span class="math notranslate nohighlight">\(x\)</span> blir nytten ved å kjøpe fra bedrift 1</p>
+<div class="math notranslate nohighlight">
+\[
+U_1 = V - P_1 - t\,x,
+\]</div>
+<p>og fra bedrift 2
+$<span class="math notranslate nohighlight">\(
+U_2 = V - P_2 - t\,(1-x),
+\)</span>$</p>
+<p>der <span class="math notranslate nohighlight">\(P_1\)</span> og <span class="math notranslate nohighlight">\(P_2\)</span> er prisene, <span class="math notranslate nohighlight">\(t\)</span> er transportkostnaden, og <span class="math notranslate nohighlight">\(V\)</span> er basisnytten.</p>
+<p>Den marginale forbrukeren, med lokalisering <span class="math notranslate nohighlight">\(X_m\)</span>, er den forbrukeren som er likegyldig mellom de to alternativene. Dette gir betingelsen</p>
+<div class="math notranslate nohighlight">
+\[
+V - P_1 - t\,X_m = V - P_2 - t\,(1-X_m).
+\]</div>
+<p>Ved å fjerne <span class="math notranslate nohighlight">\(V\)</span> og forenkle får vi</p>
+<div class="math notranslate nohighlight">
+\[
+-P_1 - t\,X_m = - P_2 - t + t\,X_m.
+\]</div>
+<p>Legg til <span class="math notranslate nohighlight">\(P_2 + t\)</span> på begge sider:</p>
+<div class="math notranslate nohighlight">
+\[
+P_2 + t - P_1 = 2t\,X_m.
+\]</div>
+<p>Dermed blir den marginale forbrukerens lokalisering</p>
+<div class="math notranslate nohighlight">
+\[
+X_m = \frac{t + P_2 - P_1}{2t}.
+\]</div>
+<p>I symmetrisk likevekt, hvor <span class="math notranslate nohighlight">\(P_1 = P_2\)</span>, forenkles uttrykket til</p>
+<div class="math notranslate nohighlight">
+\[
+X_m = \frac{t}{2t} = \frac{1}{2}.
+\]</div>
+<p>Markedsandelen til bedrift 1 blir dermed <span class="math notranslate nohighlight">\(X_m\)</span>, mens bedrift 2 får <span class="math notranslate nohighlight">\(1-X_m\)</span> av markedet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definerer symboler</span>
+<span class="n">V</span><span class="p">,</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">P_1</span><span class="p">,</span><span class="n">P_2</span><span class="p">,</span><span class="n">Q_1</span><span class="p">,</span><span class="n">Q_2</span><span class="p">,</span><span class="n">X_m</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;V c t N P_1 P_2 Q_1 Q_2 X_m&#39;</span><span class="p">)</span>
+
+<span class="c1"># Definerer likevektsbetingelser for bedrift 1</span>
+<span class="n">eq_1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">P_1</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="n">X_m</span><span class="p">,</span> <span class="n">V</span><span class="o">-</span><span class="n">P_2</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X_m</span><span class="p">))</span>
+
+<span class="c1"># Definerer likevektsbetingelser for bedrift 2</span>
+<span class="n">eq_2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">P_2</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="n">X_m</span><span class="p">,</span> <span class="n">V</span><span class="o">-</span><span class="n">P_1</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X_m</span><span class="p">))</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">eq_1</span><span class="p">,</span> <span class="n">eq_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - P_{1} + V - X_{m} t = - P_{2} + V - t \left(1 - X_{m}\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - P_{2} + V - X_{m} t = - P_{1} + V - t \left(1 - X_{m}\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for X_m for bedrift 1 og 2</span>
+<span class="n">X_m_1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq_1</span><span class="p">,</span> <span class="n">X_m</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X_m_2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq_2</span><span class="p">,</span> <span class="n">X_m</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">X_m_1</span><span class="p">,</span> <span class="n">X_m_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{- P_{1} + P_{2} + t}{2 t}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{P_{1} - P_{2} + t}{2 t}\]</div>
+</div>
+</div>
+</section>
+<section id="visualisering-av-hotelling-modellen">
+<h2>Visualisering av Hotelling-modellen<a class="headerlink" href="#visualisering-av-hotelling-modellen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">etterspørsel</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">Q</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">Q</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">invers_etterspørsel</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">P</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="o">*</span><span class="n">P</span>
+
+<span class="c1">#Q-verdier</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">1400</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">Q_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1">#funksjon for å skape akse</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_ax</span><span class="p">():</span>
+                <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Pris (P)&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+                <span class="c1"># set Pris label both left and right</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+                <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+            
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_ax</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">etterspørsel</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">Q</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">invers_etterspørsel</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">Q_2</span><span class="p">),</span> <span class="n">Q_2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
+
+<span class="c1"># vlines til likevekt</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="c1"># Symbol for X_m under v_lines linjen</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">870</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$X^m$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="c1"># Symbol for P_1 og P_2</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$P_1$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$P_2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="c1"># fix x-ticks</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c18d8d778f94aecab915bd826c87da4a90bd5d3aab7393515210f988ec573a2e.png" src="../../_images/c18d8d778f94aecab915bd826c87da4a90bd5d3aab7393515210f988ec573a2e.png" />
+</div>
+</div>
+</section>
+<section id="bertrand-konkurranse-og-ettersporsel">
+<h2>Bertrand-konkurranse og etterspørsel<a class="headerlink" href="#bertrand-konkurranse-og-ettersporsel" title="Link to this heading">#</a></h2>
+<p>For å finne markedsandelen, må vi multiplisere <span class="math notranslate nohighlight">\(X_{m1}\)</span> for bedrift 1 og <span class="math notranslate nohighlight">\(X_{m2}\)</span> for bedrift 2, med det totale antallet konsumenter, <span class="math notranslate nohighlight">\(N\)</span>, for å finne hvor mange konsumenter som kjøper fra hver bedrift.</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Etterspørsel}_{B1} = X_{m1} \times N
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{Etterspørsel}_{B2} = X_{m2} \times N
+\]</div>
+<p>Profittfunksjonene beregner vi ved å multiplisere enhetsfortjenesten, <span class="math notranslate nohighlight">\(P_1 - c\)</span> eller <span class="math notranslate nohighlight">\(P_2 - c\)</span>, med mengden solgt (etterspørselen).</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_{B1} = (P_1 - c) \times \text{Etterspørsel}_{B1}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\pi_{B2} = (P_2 - c) \times \text{Etterspørsel}_{B2}
+\]</div>
+<p>Vi finner førsteordensbetingelsene for profitmaksimering ved å derivere profittfunksjonene med hensyn til egen pris og sette derivert lik null.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \pi_{B1}}{\partial P_1} = 0 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \pi_{B2}}{\partial P_2} = 0
+\]</div>
+<p>Og løser ligningene for <span class="math notranslate nohighlight">\(P_1\)</span> og <span class="math notranslate nohighlight">\(P_2\)</span> får vi reaksjonsfunksjonene, som gir den optimale prisen for en bedrift gitt konkurrentens pris.</p>
+<div class="math notranslate nohighlight">
+\[
+P_1 = R_1(P_2) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P_2 = R_2(P_1)
+\]</div>
+<p>Til slutt substitueres den ene bedriftens reaksjonsfunksjon inn i den andres, slik at vi finner de simultane likevektsprisene for begge bedrifter.</p>
+<div class="math notranslate nohighlight">
+\[
+P_1 = R_1\Bigl(R_2(P_1)\Bigr)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P_2 = R_2\Bigl(R_1(P_2)\Bigr)
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Etterspørsel for bedrift 1</span>
+<span class="n">Etterspørsel_B1</span> <span class="o">=</span> <span class="n">X_m_1</span><span class="o">*</span><span class="n">N</span>
+
+<span class="c1"># Etterspørsel for bedrift 2</span>
+<span class="n">Etterspørsel_B2</span> <span class="o">=</span> <span class="n">X_m_2</span><span class="o">*</span><span class="n">N</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Etterspørsel_B1</span><span class="p">,</span> <span class="n">Etterspørsel_B2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{N \left(- P_{1} + P_{2} + t\right)}{2 t}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{N \left(P_{1} - P_{2} + t\right)}{2 t}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for bedrift 1</span>
+<span class="n">Profitt_B1</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_1</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">Etterspørsel_B1</span>
+
+<span class="c1"># Profitt for bedrift 2</span>
+<span class="n">Profitt_B2</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_2</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">Etterspørsel_B2</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Profitt_B1</span><span class="p">,</span> <span class="n">Profitt_B2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{N \left(P_{1} - c\right) \left(- P_{1} + P_{2} + t\right)}{2 t}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{N \left(P_{2} - c\right) \left(P_{1} - P_{2} + t\right)}{2 t}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finner optimal profitt for bedrift 1</span>
+<span class="n">Optimal_Profitt_B1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Profitt_B1</span><span class="p">,</span> <span class="n">P_1</span><span class="p">)</span>
+
+<span class="c1"># Finner optimal profitt for bedrift 2</span>
+<span class="n">Optimal_Profitt_B2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Profitt_B2</span><span class="p">,</span> <span class="n">P_2</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Optimal_Profitt_B1</span><span class="p">,</span> <span class="n">Optimal_Profitt_B2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{N \left(P_{1} - c\right)}{2 t} + \frac{N \left(- P_{1} + P_{2} + t\right)}{2 t}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{N \left(P_{2} - c\right)}{2 t} + \frac{N \left(P_{1} - P_{2} + t\right)}{2 t}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finner reaksjonsfunksjon til bedrift 1</span>
+<span class="n">Reaksjonsfunksjon_B1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Optimal_Profitt_B1</span><span class="p">,</span> <span class="n">P_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Finner reaksjonsfunksjon til bedrift 2</span>
+<span class="n">Reaksjonsfunksjon_B2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Optimal_Profitt_B2</span><span class="p">,</span> <span class="n">P_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Reaksjonsfunksjon_B1</span><span class="p">,</span> <span class="n">Reaksjonsfunksjon_B2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{P_{2}}{2} + \frac{c}{2} + \frac{t}{2}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{P_{1}}{2} + \frac{c}{2} + \frac{t}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter inn reaksjonsfunksjonen til bedrift 2 i reaksjonsfunksjonen til bedrift 1</span>
+<span class="n">likevekt_P1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">P_1</span><span class="p">,</span> <span class="n">Reaksjonsfunksjon_B1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P_2</span><span class="p">,</span> <span class="n">Reaksjonsfunksjon_B2</span><span class="p">))</span>
+
+<span class="c1"># Setter inn reaksjonsfunksjonen til bedrift 1 i reaksjonsfunksjonen til bedrift 2</span>
+<span class="n">likevekt_P2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">P_2</span><span class="p">,</span> <span class="n">Reaksjonsfunksjon_B2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P_1</span><span class="p">,</span> <span class="n">Reaksjonsfunksjon_B1</span><span class="p">))</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">likevekt_P1</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">likevekt_P2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle P_{1} = c + t\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle P_{2} = c + t\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Alternativ løsning som gir samme resultat</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">Optimal_Profitt_B1</span><span class="p">,</span><span class="n">Optimal_Profitt_B2</span><span class="p">],</span> <span class="p">[</span><span class="n">P_1</span><span class="p">,</span> <span class="n">P_2</span><span class="p">])</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="n">P_1</span><span class="p">],</span> <span class="n">sol</span><span class="p">[</span><span class="n">P_2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle c + t\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle c + t\]</div>
+</div>
+</div>
+</section>
+<section id="eksempel">
+<h2>Eksempel<a class="headerlink" href="#eksempel" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eksempelverdier</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># Definerer likevektsbetingelser for bedrift 1</span>
+<span class="n">eq_1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">P_1</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="n">X_m</span><span class="p">,</span> <span class="n">V</span><span class="o">-</span><span class="n">P_2</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X_m</span><span class="p">))</span>
+
+<span class="c1"># Definerer likevektsbetingelser for bedrift 2</span>
+<span class="n">eq_2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">P_2</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="n">X_m</span><span class="p">,</span> <span class="n">V</span><span class="o">-</span><span class="n">P_1</span><span class="o">-</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X_m</span><span class="p">))</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">eq_1</span><span class="p">,</span> <span class="n">eq_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - P_{1} - X_{m} + 100 = - P_{2} + X_{m} + 99\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - P_{2} - X_{m} + 100 = - P_{1} + X_{m} + 99\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for X_m for bedrift 1 og 2</span>
+<span class="n">X_m_1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq_1</span><span class="p">,</span> <span class="n">X_m</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X_m_2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq_2</span><span class="p">,</span> <span class="n">X_m</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">X_m_1</span><span class="p">,</span> <span class="n">X_m_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{P_{1}}{2} + \frac{P_{2}}{2} + \frac{1}{2}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{P_{1}}{2} - \frac{P_{2}}{2} + \frac{1}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Etterspørsel for bedrift 1</span>
+<span class="n">Etterspørsel_B1</span> <span class="o">=</span> <span class="n">X_m_1</span><span class="o">*</span><span class="n">N</span>
+
+<span class="c1"># Etterspørsel for bedrift 2</span>
+<span class="n">Etterspørsel_B2</span> <span class="o">=</span> <span class="n">X_m_2</span><span class="o">*</span><span class="n">N</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Etterspørsel_B1</span><span class="p">,</span> <span class="n">Etterspørsel_B2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 50 P_{1} + 50 P_{2} + 50\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 50 P_{1} - 50 P_{2} + 50\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for bedrift 1</span>
+<span class="n">Profitt_B1</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_1</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">Etterspørsel_B1</span>
+
+<span class="c1"># Profitt for bedrift 2</span>
+<span class="n">Profitt_B2</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_2</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">Etterspørsel_B2</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Profitt_B1</span><span class="p">,</span> <span class="n">Profitt_B2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(P_{1} - 10\right) \left(- 50 P_{1} + 50 P_{2} + 50\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(P_{2} - 10\right) \left(50 P_{1} - 50 P_{2} + 50\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finner optimal profitt for bedrift 1</span>
+<span class="n">Optimal_Profitt_B1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Profitt_B1</span><span class="p">,</span> <span class="n">P_1</span><span class="p">)</span>
+
+<span class="c1"># Finner optimal profitt for bedrift 2</span>
+<span class="n">Optimal_Profitt_B2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Profitt_B2</span><span class="p">,</span> <span class="n">P_2</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Optimal_Profitt_B1</span><span class="p">,</span> <span class="n">Optimal_Profitt_B2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 100 P_{1} + 50 P_{2} + 550\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 50 P_{1} - 100 P_{2} + 550\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal pris for bedrift 1 og 2</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">Optimal_Profitt_B1</span><span class="p">,</span><span class="n">Optimal_Profitt_B2</span><span class="p">],</span> <span class="p">[</span><span class="n">P_1</span><span class="p">,</span> <span class="n">P_2</span><span class="p">])</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">sol</span><span class="p">[</span><span class="n">P_1</span><span class="p">],</span> <span class="n">sol</span><span class="p">[</span><span class="n">P_2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 11\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 11\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finner profitt for bedrift 1 og 2</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Profitt_B1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">sol</span><span class="p">),</span> <span class="n">Profitt_B2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">sol</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 50\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 50\]</div>
+</div>
+</div>
+<p>Optimal pris for bedrift 1 og 2 blir 11 kroner per enhet, og profitten deres blir 50.</p>
 </section>
 <section id="oppgave-bertrand-konkurranse-og-differensiering">
 <h2>Oppgave Bertrand konkurranse og differensiering<a class="headerlink" href="#oppgave-bertrand-konkurranse-og-differensiering" title="Link to this heading">#</a></h2>
@@ -454,6 +881,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Seminar_4.1_-_Bertrand_modell_med_kapasitetsbegrensninger.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Seminar 4.1: Bertrand modell med kapasitetsbegrensninger</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Løsningsforslag monopol og tredjegrads prisdiskriminering</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -471,6 +916,9 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bertrand-konkurranse-og-differensiering">Bertrand konkurranse og differensiering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisering-av-hotelling-modellen">Visualisering av Hotelling-modellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bertrand-konkurranse-og-ettersporsel">Bertrand-konkurranse og etterspørsel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel">Eksempel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-bertrand-konkurranse-og-differensiering">Oppgave Bertrand konkurranse og differensiering</a></li>
 </ul>
   </nav></div>

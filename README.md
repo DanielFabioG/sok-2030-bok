@@ -26,9 +26,3 @@ På venstre side finner du en meny med lenker til de ulike delene av kurset, og 
 ## Kursside
 
 Disse jupyter notebooks inngår i kurset [SOK-2030 Næringsøkonomi og konkurransestrategi](https://en.uit.no/utdanning/aktivt/emne/SOK-2030) på UiT Norges arktiske universitet.
-
-
-## Kapitler
-
-```{tableofcontents}
-```

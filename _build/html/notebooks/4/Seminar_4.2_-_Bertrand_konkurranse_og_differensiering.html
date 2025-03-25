@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/4/Seminar_4.2_-_Bertrand_konkurranse_og_differensiering';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Løsningsforslag monopol og tredjegrads prisdiskriminering" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html" />
+    <link rel="next" title="Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)" href="../5/Seminar_5.1_-_Sekvensiell_priskonkurranse.html" />
     <link rel="prev" title="Seminar 4.1: Bertrand modell med kapasitetsbegrensninger" href="Seminar_4.1_-_Bertrand_modell_med_kapasitetsbegrensninger.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -190,9 +190,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../3/Seminar_3.2_-_Cournot_modell_med_asymmetriske_bedrifter.html">Seminar 3.2: Cournot modell med asymmetriske bedrifter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Seminar_4.1_-_Bertrand_modell_med_kapasitetsbegrensninger.html">Seminar 4.1: Bertrand modell med kapasitetsbegrensninger</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Seminar 4.2: Bertrand konkurranse og differensierte produkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.1_-_Sekvensiell_priskonkurranse.html">Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.2_-_Sekvensiell_kvantumkonkurranse.html">Seminar 5.2: Sekvensiell kvantumskonkurranse (Stackelberg med kvantum)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html">Løsningsforslag monopol og tredjegrads prisdiskriminering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_2.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_2.html">Løsningsforslag - monopol og produktdifferensiering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_3.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_3.html">Løsningsforslag Cournot modell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_4.3_-_L%C3%B8sningsforslag_-_Bertrand_modell.html">Løsningsforslag Bertrand konkurranse og differensiering</a></li>
 </ul>
 
     </div>
@@ -555,20 +558,20 @@ X_m = \frac{t}{2t} = \frac{1}{2}.
 <p>For å finne markedsandelen, må vi multiplisere <span class="math notranslate nohighlight">\(X_{m1}\)</span> for bedrift 1 og <span class="math notranslate nohighlight">\(X_{m2}\)</span> for bedrift 2, med det totale antallet konsumenter, <span class="math notranslate nohighlight">\(N\)</span>, for å finne hvor mange konsumenter som kjøper fra hver bedrift.</p>
 <div class="math notranslate nohighlight">
 \[
-\text{Etterspørsel}_{B1} = X_{m1} \times N
+B_1 = X_{m1} \times N =  \frac{N \left(- P_{1} + P_{2} + t\right)}{2 t}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\text{Etterspørsel}_{B2} = X_{m2} \times N
+B_2 = X_{m2} \times N = \frac{N \left(P_{1} - P_{2} + t\right)}{2 t}
 \]</div>
 <p>Profittfunksjonene beregner vi ved å multiplisere enhetsfortjenesten, <span class="math notranslate nohighlight">\(P_1 - c\)</span> eller <span class="math notranslate nohighlight">\(P_2 - c\)</span>, med mengden solgt (etterspørselen).</p>
 <div class="math notranslate nohighlight">
 \[
-\pi_{B1} = (P_1 - c) \times \text{Etterspørsel}_{B1}
+\pi_{B_1} = (P_1 - c) \times B_1 = \frac{N \left(P_{1} - c\right) \left(- P_{1} + P_{2} + t\right)}{2 t}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\pi_{B2} = (P_2 - c) \times \text{Etterspørsel}_{B2}
+\pi_{B_2} = (P_2 - c) \times B_2 = \frac{N \left(P_{2} - c\right) \left(P_{1} - P_{2} + t\right)}{2 t}
 \]</div>
 <p>Vi finner førsteordensbetingelsene for profitmaksimering ved å derivere profittfunksjonene med hensyn til egen pris og sette derivert lik null.</p>
 <div class="math notranslate nohighlight">
@@ -579,23 +582,32 @@ X_m = \frac{t}{2t} = \frac{1}{2}.
 \[
 \frac{\partial \pi_{B2}}{\partial P_2} = 0
 \]</div>
-<p>Og løser ligningene for <span class="math notranslate nohighlight">\(P_1\)</span> og <span class="math notranslate nohighlight">\(P_2\)</span> får vi reaksjonsfunksjonene, som gir den optimale prisen for en bedrift gitt konkurrentens pris.</p>
+<p>Som blir:</p>
 <div class="math notranslate nohighlight">
 \[
-P_1 = R_1(P_2) 
+\frac{\partial \pi_{B_1}}{\partial P_1}  =   - \frac{N \left(P_{1} - c\right)}{2 t} + \frac{N \left(- P_{1} + P_{2} + t\right)}{2 t}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-P_2 = R_2(P_1)
+\frac{\partial \pi_{B_2}}{\partial P_2} = - \frac{N \left(P_{2} - c\right)}{2 t} + \frac{N \left(P_{1} - P_{2} + t\right)}{2 t}
+\]</div>
+<p>Og løser ligningene for <span class="math notranslate nohighlight">\(P_1\)</span> og <span class="math notranslate nohighlight">\(P_2\)</span> får vi reaksjonsfunksjonene, som gir den optimale prisen for en bedrift gitt konkurrentens pris.</p>
+<div class="math notranslate nohighlight">
+\[
+P_1 = R_1(P_2) = \frac{P_{2}}{2} + \frac{c}{2} + \frac{t}{2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P_2 = R_2(P_1) = \frac{P_{1}}{2} + \frac{c}{2} + \frac{t}{2}
 \]</div>
 <p>Til slutt substitueres den ene bedriftens reaksjonsfunksjon inn i den andres, slik at vi finner de simultane likevektsprisene for begge bedrifter.</p>
 <div class="math notranslate nohighlight">
 \[
-P_1 = R_1\Bigl(R_2(P_1)\Bigr)
+P_1 = R_1\Bigl(R_2(P_1)\Bigr) =  c + t
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-P_2 = R_2\Bigl(R_1(P_2)\Bigr)
+P_2 = R_2\Bigl(R_1(P_2)\Bigr) = c + t
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -892,11 +904,11 @@ P_2 = R_2\Bigl(R_1(P_2)\Bigr)
       </div>
     </a>
     <a class="right-next"
-       href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html"
+       href="../5/Seminar_5.1_-_Sekvensiell_priskonkurranse.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Løsningsforslag monopol og tredjegrads prisdiskriminering</p>
+        <p class="prev-next-title">Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

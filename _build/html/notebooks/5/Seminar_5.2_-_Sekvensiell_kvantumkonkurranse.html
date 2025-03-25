@@ -656,7 +656,7 @@ P = a - b(q_1^* + q_2^*) = a - b(\frac{a - c}{2b} + \frac{\frac{a}{2} - \frac{c}
 \[
 P = \displaystyle \frac{a}{4} + \frac{3 c}{4}
 \]</div>
-<p>Profitten for leder og følgerbedrift blir optimalt kvantum minus marginalkostnad ganget med optimalt kvantum:</p>
+<p>Profitten for leder og følgerbedrift blir optimal pris minus marginalkostnad ganget med optimalt kvantum:</p>
 <div class="math notranslate nohighlight">
 \[
 \pi_{B_1} =  (\frac{a}{4} + \frac{3 c}{4} - c) \cdot \frac{a - c}{2b} =  \frac{\left(a - c\right)^{2}}{8 b}
@@ -667,10 +667,10 @@ P = \displaystyle \frac{a}{4} + \frac{3 c}{4}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimalt kvantum i likevekt (sluttmarkedet)</span>
-<span class="n">optimalt_kv</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">q_1</span><span class="p">:</span> <span class="n">q1_sol</span><span class="p">,</span> <span class="n">q_2</span><span class="p">:</span> <span class="n">q2_sol</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal pris i likevekt (sluttmarkedet)</span>
+<span class="n">optimal_pris</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">q_1</span><span class="p">:</span> <span class="n">q1_sol</span><span class="p">,</span> <span class="n">q_2</span><span class="p">:</span> <span class="n">q2_sol</span><span class="p">})</span>
 
-<span class="n">display</span><span class="p">(</span><span class="n">optimalt_kv</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">optimal_pris</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -682,7 +682,7 @@ P = \displaystyle \frac{a}{4} + \frac{3 c}{4}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for lederbedrift</span>
-<span class="n">profitt_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimalt_kv</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">q1_sol</span>
+<span class="n">profitt_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_pris</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">q1_sol</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">profitt_1</span><span class="p">))</span>
 </pre></div>
@@ -696,7 +696,7 @@ P = \displaystyle \frac{a}{4} + \frac{3 c}{4}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for følgerbedrift</span>
-<span class="n">profitt_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimalt_kv</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">q2_sol</span>
+<span class="n">profitt_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_pris</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">q2_sol</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">profitt_2</span><span class="p">))</span>
 </pre></div>

@@ -196,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_2.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_2.html">Løsningsforslag - monopol og produktdifferensiering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_3.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_3.html">Løsningsforslag Cournot modell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_4.3_-_L%C3%B8sningsforslag_-_Bertrand_modell.html">Løsningsforslag Bertrand konkurranse og differensiering</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_5.3_-_L%C3%B8sningsforslag_-_sekvensiell_konkurranse.html">Oppgave sekvensiell konkurranse (Stackelberg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_5.3_-_L%C3%B8sningsforslag_-_sekvensiell_konkurranse.html">Løsningsforslag sekvensiell konkurranse (Stackelberg)</a></li>
 </ul>
 
     </div>
@@ -392,7 +392,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#litt-oppklaring-rundt-forskjell-pa-bertrand-og-sekvensiell-priskonkurranse">Litt oppklaring rundt forskjell på Bertrand og sekvensiell priskonkurranse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sekvensiell-priskonkurranse-og-stackelberg-modellen">Sekvensiell priskonkurranse og stackelberg-modellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stackelberg-modellen">Stackelberg-modellen</a></li>
@@ -420,8 +419,6 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="id1">
-<h2>Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Ved sekvensiell priskonkurranse antar vi to bedrifter, en lederbedrift og en følgerbedrift som produserer et homogent gode. Lederbedriften setter prisen først, og følgerbedriften setter prisen etter at lederbedriften har satt sin pris. Vi antar at lederbedriften har en kostnadsfordel, og at følgerbedriften kjenner lederbedriftens pris når den setter sin egen pris. Derav navnet sekvensiell priskonkurranse.</p>
 <p>Etterspørselen til bedriftene 1 er gitt ved:</p>
 <div class="math notranslate nohighlight">
@@ -499,7 +496,6 @@ X_m = \frac{t}{2t} = \frac{1}{2}.
 \[\displaystyle \frac{P_{1} - P_{2} + t_{2}}{2 t_{2}}\]</div>
 </div>
 </div>
-</section>
 <section id="litt-oppklaring-rundt-forskjell-pa-bertrand-og-sekvensiell-priskonkurranse">
 <h2>Litt oppklaring rundt forskjell på Bertrand og sekvensiell priskonkurranse<a class="headerlink" href="#litt-oppklaring-rundt-forskjell-pa-bertrand-og-sekvensiell-priskonkurranse" title="Link to this heading">#</a></h2>
 <p>Den viktigste forskjellen mellom Bertrand (simultan) og Stackelberg (sekvensiell) priskonkurranse er ikke selve etterspørselsfunksjonene eller hvordan den marginale konsumenten beregnes, men snarere selve beslutningsprosessen og timing:</p>
@@ -579,11 +575,11 @@ B_2 = X_{m2} \times N = \frac{N \left(P_{1} - P_{2} + t\right)}{2 t}
 <p>Vi finner førsteordensbetingelsene for profitmaksimering ved å derivere profittfunksjonene med hensyn til egen pris og sette derivert lik null.</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial \pi_{B_1}}{\partial P_1}  =   - \frac{N \left(P_{1} - c\right)}{2 t} + \frac{N \left(- P_{1} + P_{2} + t\right)}{2 t}
+\frac{\partial \pi_{B_1}}{\partial P_1}  =  \frac{N \left(- 2 P_{1} + P_{2} + c + t\right)}{2 t}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial \pi_{B_2}}{\partial P_2} = - \frac{N \left(P_{2} - c\right)}{2 t} + \frac{N \left(P_{1} - P_{2} + t\right)}{2 t}
+\frac{\partial \pi_{B_2}}{\partial P_2} = \frac{N \left(P_{1} - 2 P_{2} + c + t_{2}\right)}{2 t_{2}}
 \]</div>
 <p>Deretter må vi finne reaksjonsfunksjonen til følgerbedriften. Vi setter den deriverte av profitten til følgerbedriften lik null og løser for <span class="math notranslate nohighlight">\(P_2\)</span>.</p>
 <div class="math notranslate nohighlight">
@@ -592,7 +588,7 @@ B_2 = X_{m2} \times N = \frac{N \left(P_{1} - P_{2} + t\right)}{2 t}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-- \frac{N \left(P_{2} - c\right)}{2 t} + \frac{N \left(P_{1} - P_{2} + t\right)}{2 t} = 0
+\frac{N \left(P_{1} - 2 P_{2} + c + t_{2}\right)}{2 t_{2}} = 0
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -815,7 +811,6 @@ B_2^* = \frac{N \left(\frac{3 t}{2} - \frac{5 t}{4} + t\right)}{2 t} =  \frac{5 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#litt-oppklaring-rundt-forskjell-pa-bertrand-og-sekvensiell-priskonkurranse">Litt oppklaring rundt forskjell på Bertrand og sekvensiell priskonkurranse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sekvensiell-priskonkurranse-og-stackelberg-modellen">Sekvensiell priskonkurranse og stackelberg-modellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stackelberg-modellen">Stackelberg-modellen</a></li>

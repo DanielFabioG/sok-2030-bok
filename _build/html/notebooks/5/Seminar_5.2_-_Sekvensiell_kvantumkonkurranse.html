@@ -196,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_2.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_2.html">Løsningsforslag - monopol og produktdifferensiering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_3.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_3.html">Løsningsforslag Cournot modell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_4.3_-_L%C3%B8sningsforslag_-_Bertrand_modell.html">Løsningsforslag Bertrand konkurranse og differensiering</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_5.3_-_L%C3%B8sningsforslag_-_sekvensiell_konkurranse.html">Oppgave sekvensiell konkurranse (Stackelberg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_5.3_-_L%C3%B8sningsforslag_-_sekvensiell_konkurranse.html">Løsningsforslag sekvensiell konkurranse (Stackelberg)</a></li>
 </ul>
 
     </div>
@@ -395,8 +395,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Seminar 5.2: Sekvensiell kvantumskonkurranse (Stackelberg med kvantum)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totalinntekt-og-marginalinntekt">Totalinntekt og marginalinntekt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stackelberg-modellen">Stackelberg modellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-1">Trinn 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-2">Trinn 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-1">Trinn 1</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimalt-kvantum-i-sluttmarked-og-profitt">Optimalt kvantum i sluttmarked og profitt</a></li>
@@ -529,8 +529,8 @@ MR_2 = \frac{\partial TR_2}{\partial q_2} = a-2bq_2 - bq_1
 </section>
 <section id="stackelberg-modellen">
 <h2>Stackelberg modellen<a class="headerlink" href="#stackelberg-modellen" title="Link to this heading">#</a></h2>
-<section id="trinn-1">
-<h3>Trinn 1<a class="headerlink" href="#trinn-1" title="Link to this heading">#</a></h3>
+<section id="trinn-2">
+<h3>Trinn 2<a class="headerlink" href="#trinn-2" title="Link to this heading">#</a></h3>
 <p>I Stackelberg-kvantumskonkurranse bestemmer lederbedriften (bedrift 1) først hvilket kvantum den ønsker å produsere. Deretter observerer følgerbedriften (bedrift 2) dette kvantumet og velger sitt kvantum basert på lederens valg.</p>
 <p>Vi løser Stackelberg-modellen ved baklengs induksjon som følger:</p>
 <p>Følgerbedriften maksimerer sin profitt ved å velge kvantum som maksimerer profitten gitt lederbedriftens valg <span class="math notranslate nohighlight">\(q_1\)</span>.</p>
@@ -547,7 +547,7 @@ q_2 =  \frac{a - b q_{1} - c}{2 b}
 <p>Dette gir oss følgerens reaksjonsfunksjon, som er følgerens optimale respons på lederbedriftens valg.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trinn 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trinn 2</span>
 
 <span class="c1"># Setter marginalinntekten lik kostnaden</span>
 <span class="n">likevekt_q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_q2</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
@@ -576,8 +576,8 @@ q_2 =  \frac{a - b q_{1} - c}{2 b}
 </div>
 </div>
 </section>
-<section id="trinn-2">
-<h3>Trinn 2<a class="headerlink" href="#trinn-2" title="Link to this heading">#</a></h3>
+<section id="trinn-1">
+<h3>Trinn 1<a class="headerlink" href="#trinn-1" title="Link to this heading">#</a></h3>
 <p>Lederbedriften vet at følgerbedriften vil velge kvantum som gitt av reaksjonsfunksjonen.</p>
 <p>Lederbedriften setter derfor inn følgerens reaksjonsfunksjon i sin egen profittfunksjon, og finner det optimale kvantumet ved å derivere denne med hensyn på eget kvantum og sette uttrykket lik null. Merk at her løser jeg det litt annerledes siden vi ikke har profittfunksjonen til lederbedriften.</p>
 <p>Vi kommer frem til samme løsning ved å substituere inn <span class="math notranslate nohighlight">\(q_2\)</span> i totalinntekten til lederbedriften og deretter derivere denne med hensyn på <span class="math notranslate nohighlight">\(q_1\)</span>.</p>
@@ -586,11 +586,12 @@ q_2 =  \frac{a - b q_{1} - c}{2 b}
 \[
 \pi_{B_1} = \frac{a}{2} - b q_{1} + \frac{c}{2}
 \]</div>
-<p>Nå trenger vi bare sette proffitfunksjonen lik marginalkostnaden for å finne lederens optimale kvantum:</p>
+<p>Så setter vi profittmaksimerende kvantum likt kostnadene:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{a}{2} - b q_{1} + \frac{c}{2} = c
 \]</div>
+<p>Og nå trenger vi bare å løse denne likningen for <span class="math notranslate nohighlight">\(q_1\)</span>, for å finne lederens optimale kvantum:</p>
 <div class="math notranslate nohighlight">
 \[
 q_{1}^* = \frac{a - c}{2b}
@@ -598,11 +599,11 @@ q_{1}^* = \frac{a - c}{2b}
 <p>For følgerbedriften setter vi inn <span class="math notranslate nohighlight">\(q_1^*\)</span> i reaksjonsfunksjonen for å finne følgerens optimale kvantum:</p>
 <div class="math notranslate nohighlight">
 \[
-q_{2}^* = \frac{a - b \frac{a - c}{2b} - c}{2b} = \frac{\frac{a}{2} - \frac{c}{2}}{2 b}
+q_{2}^* = \frac{a - b \frac{a - c}{2b} - c}{2b} = \frac{a-c}{4 b}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trinn 2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trinn 1</span>
 
 <span class="c1"># Vi setter så reaksjonsfunksjonen til bedrift 2 inn i bedrift 1 sin Totalinntekt og deriverer med hensyn på q1</span>
 <span class="n">profitt_1_q</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_2</span><span class="p">,</span> <span class="n">q2</span><span class="p">),</span> <span class="n">q_1</span><span class="p">)</span>
@@ -618,8 +619,8 @@ q_{2}^* = \frac{a - b \frac{a - c}{2b} - c}{2b} = \frac{\frac{a}{2} - \frac{c}{2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finner optimalt kvantum for lederbedrift ved å sette profitten lik kostnaden og løse for q1</span>
-<span class="n">q1_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">profitt_1_q</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">q_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finner optimalt kvantum for lederbedrift ved å løse for q1</span>
+<span class="n">q1_sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">profitt_1_q</span><span class="p">,</span><span class="n">c</span><span class="p">),</span> <span class="n">q_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">q1_sol</span><span class="p">)</span>
 </pre></div>
@@ -800,8 +801,8 @@ passasjer.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Seminar 5.2: Sekvensiell kvantumskonkurranse (Stackelberg med kvantum)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totalinntekt-og-marginalinntekt">Totalinntekt og marginalinntekt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stackelberg-modellen">Stackelberg modellen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-1">Trinn 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-2">Trinn 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-1">Trinn 1</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimalt-kvantum-i-sluttmarked-og-profitt">Optimalt kvantum i sluttmarked og profitt</a></li>

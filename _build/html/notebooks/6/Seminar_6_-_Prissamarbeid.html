@@ -1,0 +1,1307 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Seminar 6.1: Prissamarbeid &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/6/Seminar_6_-_Prissamarbeid';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduksjon
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1/Seminar_1.1_-_Optimal_tilpasning_ved_monopol.html">Seminar 1.1: Optimal tilpasning ved monopol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/Seminar_1.2_-_Monopol_og_tredjegrads_prisdiskriminering.html">Seminar 1.2: Monopol og tredje grads prisdiskriminering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/Seminar_2.1_-_Monopol_og_prisdiskriminering%2C_to-delt_tariff.html">Seminar 2.1: Monopol og prisdiskriminering, to-delt tariff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/Seminar_2.2_-_Monopol_og_produktdifferensiering.html">Seminar 2.2: Monopol og produktdifferensiering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3/Seminar_3.1_-_Cournot_modell_med_symmetriske_bedrifter.html">Seminar 3.1: Cournot-modellen med symmetriske bedrifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3/Seminar_3.2_-_Cournot_modell_med_asymmetriske_bedrifter.html">Seminar 3.2: Cournot modell med asymmetriske bedrifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4/Seminar_4.1_-_Bertrand_modell_med_kapasitetsbegrensninger.html">Seminar 4.1: Bertrand modell med kapasitetsbegrensninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4/Seminar_4.2_-_Bertrand_konkurranse_og_differensiering.html">Seminar 4.2: Bertrand konkurranse og differensierte produkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.1_-_Sekvensiell_priskonkurranse.html">Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.2_-_Sekvensiell_kvantumkonkurranse.html">Seminar 5.2: Sekvensiell kvantumskonkurranse (Stackelberg med kvantum)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html">Løsningsforslag monopol og tredjegrads prisdiskriminering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_2.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_2.html">Løsningsforslag - monopol og produktdifferensiering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_3.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_3.html">Løsningsforslag Cournot modell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_4.3_-_L%C3%B8sningsforslag_-_Bertrand_modell.html">Løsningsforslag Bertrand konkurranse og differensiering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_5.3_-_L%C3%B8sningsforslag_-_sekvensiell_konkurranse.html">Løsningsforslag sekvensiell konkurranse (Stackelberg)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/6/Seminar_6_-_Prissamarbeid.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/6/Seminar_6_-_Prissamarbeid.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Seminar 6.1: Prissamarbeid</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prissamarbeid-med-bertrand-modell">Prissamarbeid med Bertrand-modell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profitt-ved-prissamarbeid">Profitt ved prissamarbeid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabell-for-oppsummering">Tabell for oppsummering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fangens-dilemma">Fangens dilemma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prissamarbeid-cournot-modell">Prissamarbeid cournot-modell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totalinntekt-og-marginalinntekt">Totalinntekt og marginalinntekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reaksjonsfunksjoner">Reaksjonsfunksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisk-likevekt">Symmetrisk likevekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-pris">Optimal pris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profitt">Profitt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-med-avvik-i-cournot-modellen">Optimal tilpasning med avvik i cournot-modellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Tabell for oppsummering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Fangens dilemma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prissamarbeid-med-gjentatte-spill">Prissamarbeid med gjentatte spill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nar-vil-det-lonne-seg-a-sammarbeide-under-bertrand-konkurranse">Når vil det lønne seg å sammarbeide under Bertrand konkurranse?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-prissamarbeid">Oppgave prissamarbeid</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="seminar-6-1-prissamarbeid">
+<h1>Seminar 6.1: Prissamarbeid<a class="headerlink" href="#seminar-6-1-prissamarbeid" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="prissamarbeid-med-bertrand-modell">
+<h2>Prissamarbeid med Bertrand-modell<a class="headerlink" href="#prissamarbeid-med-bertrand-modell" title="Link to this heading">#</a></h2>
+<p>For å se om prissamarbeid vil være lønnsomt for bedriftene må vi sammenligne ulike markedstilpasninger. I denne del av seminaret skal vi se hvordan prissamarbeid vil påvirke bedriftenes profitt og hvordan det kan føre til “fangens dilemma”.</p>
+<p>Ved prissamarbeid vil bedriftene dele monopolet og maksimere profitt sammen. Vi setter derfor opp i en bertrand monopolmodell for å finne den optimale produksjonen og prisen.</p>
+<p>Vi husker at den totale etterspørselen er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = 150 - P
+\]</div>
+<p>Løser for invers etterspørsel:</p>
+<div class="math notranslate nohighlight">
+\[
+P = 150 - Q
+\]</div>
+<p>Siden vi har prissamarbeid, vil bedriftene produsere sammen og maksimere profitt. Den totale inntekten blir da:</p>
+<div class="math notranslate nohighlight">
+\[
+TR = P \cdot Q = P \cdot (150 - Q) = 150Q - Q^2
+\]</div>
+<p>Deretter finner vi marginalinntekten ved å derivere totalinntekten med hensyn på <span class="math notranslate nohighlight">\(Q\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+MR = \frac{\partial TR}{\partial Q} = 150 - 2Q
+\]</div>
+<p>Setter marginalinntekten lik marginalkostnaden:</p>
+<div class="math notranslate nohighlight">
+\[
+150 - 2Q = 30
+\]</div>
+<p>Løser for <span class="math notranslate nohighlight">\(Q\)</span> for å finne optimal produksjon:</p>
+<div class="math notranslate nohighlight">
+\[
+Q^* = 60
+\]</div>
+<p>Setter inn <span class="math notranslate nohighlight">\(Q^*\)</span> i den inverse etterspørselen for å finne optimal pris:</p>
+<div class="math notranslate nohighlight">
+\[
+P^* = 150 - Q^* = 150 - 60 = 90
+\]</div>
+</section>
+<section id="profitt-ved-prissamarbeid">
+<h2>Profitt ved prissamarbeid<a class="headerlink" href="#profitt-ved-prissamarbeid" title="Link to this heading">#</a></h2>
+<p>Profitten til bedriftene ved prissamarbeid er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi = (P^* - c) \cdot Q^* \rightarrow \pi = (90 - 30) \cdot 60 = 3600
+\]</div>
+<p>For hver bedrift blir det:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_{\text{bedrift}} = \frac{\pi}{2} = \frac{3600}{2} = 1800
+\]</div>
+<p>Så ved prissamarbeid vil hver bedrift oppnå en profitt på 1800, som er høyere enn 1600 som de oppnår ved Cournot-konkurranse.</p>
+</section>
+<section id="tabell-for-oppsummering">
+<h2>Tabell for oppsummering<a class="headerlink" href="#tabell-for-oppsummering" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situasjon</p></th>
+<th class="head"><p>Samarbeid</p></th>
+<th class="head"><p>Avvik</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Samarbeid</p></td>
+<td><p>(1800,1800)</p></td>
+<td><p>(0,3600)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Avvik</p></td>
+<td><p>(3600,0)</p></td>
+<td><p><strong>(0, 0)</strong> <span class="math notranslate nohighlight">\(\leftarrow\)</span> Nash-likevekt</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fangens-dilemma">
+<h2>Fangens dilemma<a class="headerlink" href="#fangens-dilemma" title="Link to this heading">#</a></h2>
+<p>Spillerne har to valg : samarbeide eller avvike. Hvis begge samarbeider, får de en profitt på 1800 hver. Hvis den ene avviker, får den 3600 mens den andre får 0. Hvis begge avviker, får de 0.</p>
+<p>Derfor blir utfallet:</p>
+<p>Nash-likevekt: (0,0) - begge avviker</p>
+<p>Dette eksemplet er et klassisk fangens dilemma, hvor hvor begge spillerne har insentiv til å avvike fra samarbeidet, selv om de ville fått høyere profitt ved å samarbeide. Dette er et eksempel på hvordan prissamarbeid kan føre til “fangens dilemma” i Bertrand-modellen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definerer symbol</span>
+<span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">q_1</span><span class="p">,</span><span class="n">q_2</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;P Q q_1 q_2 b c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definerer etterspørselsfunksjonen</span>
+<span class="n">Etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">150</span><span class="o">-</span><span class="n">P</span><span class="p">)</span>
+
+<span class="c1"># Løser for P</span>
+<span class="n">Invers_etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">P</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Invers_etterspørsel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 150 - Q\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ganger etterspørselen med kvantumet for å finne totalinntekten</span>
+<span class="n">Totalinntekt</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">Q</span>
+
+<span class="n">Totalinntekt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle Q \left(150 - Q\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deriverer totalinntekten for å finne marginalinntekten</span>
+<span class="n">Marginalinntekt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="n">Q</span><span class="p">)</span>
+
+<span class="n">Marginalinntekt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 150 - 2 Q\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi vet at marginalkostnaden er 30</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># Finner optimalt kvantum med å sette marginalinntekten lik marginalkostnaden</span>
+<span class="n">likevekt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">likevekt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 150 - 2 Q = 30\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for Q</span>
+<span class="n">optimal_Q</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt</span><span class="p">,</span> <span class="n">Q</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">optimal_Q</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 60\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal pris med å sette optimalt kvantum inn i invers etterspørsel</span>
+<span class="n">optimal_P</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">optimal_Q</span><span class="p">)</span>
+
+<span class="n">optimal_P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 90\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finner profitten</span>
+<span class="n">profitt</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_P</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">optimal_Q</span>
+
+<span class="n">profitt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 3600\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for hver bedrift i prissamarbeid</span>
+<span class="n">profitt_q1</span> <span class="o">=</span> <span class="n">profitt</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="n">profitt_q2</span> <span class="o">=</span> <span class="n">profitt</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">profitt_q1</span><span class="p">,</span> <span class="n">profitt_q2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1800\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1800\]</div>
+</div>
+</div>
+</section>
+<section id="prissamarbeid-cournot-modell">
+<h2>Prissamarbeid cournot-modell<a class="headerlink" href="#prissamarbeid-cournot-modell" title="Link to this heading">#</a></h2>
+<p>Vi starter med å sette opp etterspørselen:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = 150 - P
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(Q\)</span> er mengden som etterspørres, <span class="math notranslate nohighlight">\(P\)</span> er prisen.</p>
+<p>Q er også lik summen av mengden som produseres av de to bedriftene:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = q_1 + q_2
+\]</div>
+<p>Siden vi har to bedrifter i en Cournot-modell, vil hver bedrift maksimere profitten sin gitt at konkurrenten produserer en viss mengde.</p>
+<p>Videre så antar vi at vi har en marginalkostnad <span class="math notranslate nohighlight">\(c = 30\)</span>, for begge bedriftene.</p>
+<p>Vi starter med å finne invers etterspørsel for å finne prisen som funksjon av mengden som produseres. Denne er gitt ved å løse etterspørsel for <span class="math notranslate nohighlight">\(P\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = 150 - P  \Rightarrow P = 150 - Q
+\]</div>
+<p>Som gir den inverse etterspørselfunksjonen:</p>
+<div class="math notranslate nohighlight">
+\[
+P = 150 - (q_1 + q_2)
+\]</div>
+</section>
+<section id="totalinntekt-og-marginalinntekt">
+<h2>Totalinntekt og marginalinntekt<a class="headerlink" href="#totalinntekt-og-marginalinntekt" title="Link to this heading">#</a></h2>
+<p>Finner så totalinntekten til hver bedrift, som er gitt ved prisen ganget med kvantum:</p>
+<div class="math notranslate nohighlight">
+\[
+TR_1 = P \times q_1 = q_1(150-bq_1 -bq_2)
+\]</div>
+<p>og for bedrift 2:</p>
+<div class="math notranslate nohighlight">
+\[
+TR_2 = P \times q_2 = q_2(150-bq_1 -bq_2)
+\]</div>
+<p>Finner så marginalinntekten for begge bedriftene, som den deriverte av totalinntekten med henhold til kvantum:</p>
+<div class="math notranslate nohighlight">
+\[
+MR_1 = \frac{\partial TR_1}{\partial q_1} = 150-2bq_1 - bq_2
+\]</div>
+<p>og for bedrift 2:</p>
+<div class="math notranslate nohighlight">
+\[
+MR_2 = \frac{\partial TR_2}{\partial q_2} = 150-2bq_2 - bq_1
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q = q_1 + q_2</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="n">q_1</span> <span class="o">+</span> <span class="n">q_2</span><span class="p">)</span>
+
+<span class="c1"># Definerer etterspørselsfunksjonen</span>
+<span class="n">Etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">150</span><span class="o">-</span><span class="n">P</span><span class="p">)</span>
+
+<span class="c1"># Løser for P</span>
+<span class="n">Invers_etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">P</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Viser løsningene</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">Invers_etterspørsel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} + q_{2} = 150 - P\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - q_{2} + 150\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multipliserer prisen med kvantumet for å finne totalinntekten</span>
+<span class="n">Totalinntekt</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">q_1</span>
+<span class="n">Totalinntekt2</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">q_2</span>
+
+<span class="c1"># Viser totalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="n">Totalinntekt2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} \left(- q_{1} - q_{2} + 150\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{2} \left(- q_{1} - q_{2} + 150\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deriverer totalinntekten for å finne marginalinntekten</span>
+<span class="n">Marginalinntekt_q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)</span>
+<span class="n">Marginalinntekt_q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt2</span><span class="p">,</span> <span class="n">q_2</span><span class="p">)</span>
+
+<span class="c1"># Viser marginalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Marginalinntekt_q1</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Marginalinntekt_q2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 q_{1} - q_{2} + 150\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - 2 q_{2} + 150\]</div>
+</div>
+</div>
+</section>
+<section id="reaksjonsfunksjoner">
+<h2>Reaksjonsfunksjoner<a class="headerlink" href="#reaksjonsfunksjoner" title="Link to this heading">#</a></h2>
+<p>Nå har vi regnet ut marginalinntekten, og vi kan sette denne lik marginalkostnaden for å finne optimal produksjon for hver bedrift. Vi setter <span class="math notranslate nohighlight">\(MR = c\)</span>, dvs. <span class="math notranslate nohighlight">\(MR = 30\)</span>, og løser for kvantum til bedrift 1:</p>
+<p>For bedrift 1:</p>
+<div class="math notranslate nohighlight">
+\[
+150 - 2q_1 - q_2 = 30  \Rightarrow  q_1 = 60 - \frac{q_{2}}{2}
+\]</div>
+<p>For bedrift 2:</p>
+<div class="math notranslate nohighlight">
+\[
+150 - q_1 - 2q_2 = 30 \Rightarrow q_2 = 60 - \frac{q_{1}}{2}
+\]</div>
+</section>
+<section id="symmetrisk-likevekt">
+<h2>Symmetrisk likevekt<a class="headerlink" href="#symmetrisk-likevekt" title="Link to this heading">#</a></h2>
+<p>I symmetrisk likevekt antar vi at <span class="math notranslate nohighlight">\(q_1 = q_2 = q\)</span>. Ved å sette <span class="math notranslate nohighlight">\(q_2 = q\)</span> i bedrift 1 sin reaksjonsfunksjon får vi:</p>
+<div class="math notranslate nohighlight">
+\[
+q_{1} = \frac{q_{1}}{4} + 30
+\]</div>
+<p>og løser for <span class="math notranslate nohighlight">\(q_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+q_{1}^* = 40
+\]</div>
+<p>Setter så inn <span class="math notranslate nohighlight">\(q_{1}^* = 40\)</span> i reaksjonsfunksjonen til bedrift 2:</p>
+<div class="math notranslate nohighlight">
+\[
+q_{2}^* = 60 - \frac{40}{2} = 40
+\]</div>
+<p>Dermed er likevektsproduksjonen for hver bedrift</p>
+<div class="math notranslate nohighlight">
+\[
+q_1^* = q_2^* = 40
+\]</div>
+<p>Den totale mengden blir da</p>
+<div class="math notranslate nohighlight">
+\[
+Q^* = q_1^* + q_2^* = 40 + 40 = 80
+\]</div>
+</section>
+<section id="optimal-pris">
+<h2>Optimal pris<a class="headerlink" href="#optimal-pris" title="Link to this heading">#</a></h2>
+<p>For å finne prisen i likevekt, setter vi inn <span class="math notranslate nohighlight">\(Q^*\)</span> i den inverse etterspørselen:</p>
+<p>Den inverse etterspørselen husker vi at er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+P = 150 - Q
+\]</div>
+<p>Hvor vi vet at <span class="math notranslate nohighlight">\(Q^* = 80\)</span>, så vi får:</p>
+<div class="math notranslate nohighlight">
+\[
+P^* = 150 - 80 = 70
+\]</div>
+</section>
+<section id="profitt">
+<h2>Profitt<a class="headerlink" href="#profitt" title="Link to this heading">#</a></h2>
+<p>Profitten til en bedrift er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi = (P^* - c) \cdot Q^* \rightarrow \pi = (70 - 30) \cdot 40 = 1600
+\]</div>
+<p>Dersom du har faste kostnader, trekkes disse fra profitten for å gi netto profit.</p>
+<p>Hvis faste kostnader <span class="math notranslate nohighlight">\(F\)</span> (for eksempel 500) skal trekkes fra, blir netto profitt:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_{\text{netto}} = \pi - F = 1600 - 500 = 1100
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter marginalinntekten lik kostnaden</span>
+<span class="n">likevekt_q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_q1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">likevekt_q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_q2</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">likevekt_q1</span><span class="p">,</span> <span class="n">likevekt_q2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 q_{1} - q_{2} + 150 = 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - 2 q_{2} + 150 = 30\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q1 for å finne reaksjonsfunksjon til bedrift 1</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt_q1</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">q1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 60 - \frac{q_{2}}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q2 for å finne reaksjonsfunksjon til bedrift 2</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt_q2</span><span class="p">,</span> <span class="n">q_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">q2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 60 - \frac{q_{1}}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter uttrykk for q2 inn i q1 for å finne likevektskvantum</span>
+<span class="n">likevekt_eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_2</span><span class="p">,</span> <span class="n">q2</span><span class="p">))</span>
+<span class="n">likevekt_eq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} = \frac{q_{1}}{4} + 30\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser symmetrisk likevekt for q1 og q2</span>
+<span class="n">optimal_q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt_eq</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">optimal_q2</span> <span class="o">=</span> <span class="n">q2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">optimal_q1</span><span class="p">)</span>
+
+
+<span class="n">display</span><span class="p">(</span><span class="n">optimal_q1</span><span class="p">,</span> <span class="n">optimal_q2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 40\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 40\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal Pris</span>
+<span class="n">optimal_P</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">q_1</span><span class="p">:</span> <span class="n">optimal_q1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">:</span> <span class="n">optimal_q2</span><span class="p">})</span>
+
+<span class="n">optimal_P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 70\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt</span>
+<span class="n">profitt</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_P</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">optimal_q1</span>
+
+<span class="n">profitt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1600\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt med faste kostnader</span>
+<span class="n">FK</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="c1"># Profitt</span>
+<span class="n">profitt_fast_kostnad</span> <span class="o">=</span> <span class="n">profitt</span> <span class="o">-</span> <span class="n">FK</span>
+
+<span class="n">profitt_fast_kostnad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1100\]</div>
+</div>
+</div>
+</section>
+<section id="optimal-tilpasning-med-avvik-i-cournot-modellen">
+<h2>Optimal tilpasning med avvik i cournot-modellen<a class="headerlink" href="#optimal-tilpasning-med-avvik-i-cournot-modellen" title="Link to this heading">#</a></h2>
+<p>I cournot-modellen er det antatt at bedriftene har full informasjon om hverandre og at de tar hensyn til hverandres produksjon når de bestemmer sin egen produksjon. Dette kan føre til en situasjon der en av bedriftene velger å avvike fra den avtalte mengden for å maksimere sin egen profitt.</p>
+<p>La oss se hva som skjer hvis en av bedriftene, for eksempel bedrift 2, velger å avvike fra den avtalte mengden. Vi antar at bedrift 1 fortsatt følger den avtalte mengden på <span class="math notranslate nohighlight">\(\frac{Q^*}{2} =\frac{60}{2} = 30\)</span>. Bedrift 2 vil da maksimere sin egen profitt ved å velge en produksjon som er høyere enn den avtalte mengden ved å bruke reaksjonsfunksjonen og putter inn <span class="math notranslate nohighlight">\(q_1 = 30\)</span> i reaksjonsfunksjonen for bedrift 2.</p>
+<p>Vi har regnet ut reaksjonsfunksjonen for bedrift 2 som:</p>
+<div class="math notranslate nohighlight">
+\[
+q_1 = 60 - \frac{q_{1}}{2}
+\]</div>
+<p>Vi setter da inn <span class="math notranslate nohighlight">\(q_1 = 30\)</span> i reaksjonsfunksjonen for bedrift 2:</p>
+<div class="math notranslate nohighlight">
+\[
+q_2 = 60 - \frac{30}{2} = 45
+\]</div>
+<p>Og finner ut at bedrift 2 vil produsere 45 enheter, som er høyere enn den avtalte mengden på 30 enheter.</p>
+<p>Får ny pris som blir:</p>
+<div class="math notranslate nohighlight">
+\[
+P^* = 150 - Q = 150 - (30 + 45) = 75
+\]</div>
+<p>Og bedriftenes profitt blir:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_1 = (P^* - c) \cdot q_1 = (75 - 30) \cdot 30 = 1350
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\pi_2 = (P^* - c) \cdot q_2 = (75 - 30) \cdot 45 = 2025
+\]</div>
+</section>
+<section id="id1">
+<h2>Tabell for oppsummering<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situasjon</p></th>
+<th class="head"><p>Samarbeid</p></th>
+<th class="head"><p>Avvik</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Samarbeid</p></td>
+<td><p>(1800,1800)</p></td>
+<td><p>(1350,2025)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Avvik</p></td>
+<td><p>(2025,1350)</p></td>
+<td><p><strong>(1600, 1600)</strong> <span class="math notranslate nohighlight">\(\leftarrow\)</span> Nash-likevekt</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id2">
+<h2>Fangens dilemma<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Spillerne har to valg : samarbeide eller avvike. Hvis begge samarbeider, får de en profitt på 1800 hver. Hvis den ene avviker, får den 1350 mens den andre får 2025. Hvis begge avviker, får de 1600 hver.</p>
+<p>Hvis Spiller 2 samarbeider, er det best for Spiller 1 å avvike <span class="math notranslate nohighlight">\((2025 &gt; 1800)\)</span>.</p>
+<p>Hvis Spiller 2 avviker, er det fortsatt best for Spiller 1 å avvike <span class="math notranslate nohighlight">\((1600 &gt; 1350)\)</span></p>
+<p>Samme for Spiller 2.</p>
+<p>Pareto-optimalitet: (1800, 1800) - begge samarbeider</p>
+<p>Likevel er det ikke stabilt, fordi begge har insentiv til å avvike. Hvis en av dem avviker, vil den andre også ha insentiv til å avvike for å maksimere sin egen profitt.</p>
+<p>Derfor blir utfallet:</p>
+<p>Nash-likevekt: (1600, 1600) - begge avviker</p>
+<p>Så fangens dilemma er at selv om det ville vært best for begge å samarbeide og oppnå høyere profitt, vil de ende opp med å avvike og oppnå lavere profitt. Rasjonelle valg fører til et suboptimalt resultat for begge parter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter inn det nye kvantumet i reaksjonsfunksjonen for bedrift 2</span>
+<span class="n">ny_q1</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">ny_optimal_q2</span> <span class="o">=</span> <span class="n">q2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">ny_q1</span><span class="p">)</span>
+
+<span class="c1"># Viser ny optimal kvantum for bedrift 2</span>
+<span class="n">ny_optimal_q2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 45\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Den nye prisen blir</span>
+<span class="n">optimal_P</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">q_1</span><span class="p">:</span> <span class="n">ny_q1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">:</span><span class="n">ny_optimal_q2</span><span class="p">})</span>
+
+<span class="n">optimal_P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 75\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for bedrift 1</span>
+<span class="n">profitt</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_P</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">ny_q1</span>
+<span class="n">profitt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1350\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for bedrift 2</span>
+<span class="n">profitt2</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_P</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">ny_optimal_q2</span>
+<span class="n">profitt2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2025\]</div>
+</div>
+</div>
+</section>
+<section id="prissamarbeid-med-gjentatte-spill">
+<h2>Prissamarbeid med gjentatte spill<a class="headerlink" href="#prissamarbeid-med-gjentatte-spill" title="Link to this heading">#</a></h2>
+<p>I gjentatte spill kan det være mulig å oppnå samarbeid mellom bedriftene over tid, selv om det er insentiv til å avvike i hvert enkelt spill. Dette kan oppnås ved å bruke strategier som “tilbakeholdelse” eller “gjensidig straff” for å oppmuntre til samarbeid.</p>
+<p>For å se om prissamarbeid vil lønnne seg ved gjentatte spill må vi sammenligne nåverdien av samarbeid (deling av profitt ved monopoltilpasning) med nåverdien ved avvik (profitt ved avvik i en periode og profitt ved Cournot-tilpasning resten av periodene)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy.solvers.inequalities</span><span class="w"> </span><span class="kn">import</span> <span class="n">reduce_rational_inequalities</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x r&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nåverdi ved sammarbeid &gt; nåverdi ved avvik - med p=1</span>
+<span class="n">reduce_rational_inequalities</span><span class="p">([[</span><span class="mi">1800</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2025</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">1600</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)]],</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{9}{17} &lt; x \wedge x &lt; 1\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reduce_rational_inequalities</span><span class="p">([[</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="o">/</span><span class="mi">17</span><span class="p">]],</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -1.0 &lt; r \wedge r &lt; 0.888888888888889\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nåverdi ved sammarbeid &gt; nåverdi ved avvik - med p=0.6</span>
+<span class="n">reduce_rational_inequalities</span><span class="p">([[</span><span class="mi">1800</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mf">0.6</span><span class="o">*</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">2025</span><span class="o">+</span><span class="p">((</span><span class="mf">0.6</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">1600</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mf">0.6</span><span class="o">*</span><span class="n">x</span><span class="p">))]],</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.882352941176471 &lt; x \wedge x &lt; 1.66666666666667\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reduce_rational_inequalities</span><span class="p">([[</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.88235</span><span class="p">]],</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -1.0 &lt; r \wedge r &lt; 0.133337111123704\]</div>
+</div>
+</div>
+</section>
+<section id="nar-vil-det-lonne-seg-a-sammarbeide-under-bertrand-konkurranse">
+<h2>Når vil det lønne seg å sammarbeide under Bertrand konkurranse?<a class="headerlink" href="#nar-vil-det-lonne-seg-a-sammarbeide-under-bertrand-konkurranse" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nåverdi ved sammarbeid &gt; nåverdi ved avvik - </span>
+<span class="n">reduce_rational_inequalities</span><span class="p">([[</span><span class="mi">1800</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3600</span><span class="p">]],</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{1}{2} &lt; x \wedge x &lt; 1\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reduce_rational_inequalities</span><span class="p">([[</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">]],</span> <span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle -1.0 &lt; r \wedge r &lt; 1.0\]</div>
+</div>
+</div>
+</section>
+<section id="oppgave-prissamarbeid">
+<h2>Oppgave prissamarbeid<a class="headerlink" href="#oppgave-prissamarbeid" title="Link to this heading">#</a></h2>
+<p>Vi skal her se på caset med bryggeriene Graff Brygghus og Bryggeri 13, og se om det vil lønne seg for disse å inngå et samarbeid.</p>
+<p>Informasjon om markedet:</p>
+<p>I markedet for mikroøl har vi to bryggerier i Tromsø, Graff Brygghus og Bryggeri 13. I produksjon av øl velger bedriftene produksjonsvolum i god tid før produktene er på markedet.</p>
+<p>Etterspørselen i markedet er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+P = 175 – 2Q
+\]</div>
+<p>hvor <span class="math notranslate nohighlight">\(P\)</span> er markedspris for mikroøl per flaske, <span class="math notranslate nohighlight">\(Q\)</span> er totalt kvantum (antall tusen flasker) og <span class="math notranslate nohighlight">\(Q = q_G + q_B\)</span>, der <span class="math notranslate nohighlight">\(q_G\)</span> er produsert kvantum for Graff Brygghus og qB er produsert kvantum for Bryggeri 13. I produksjon av mikroøl vil Graff Brygghus og Bryggeri 13 ha konstante marginalkostnader på kr 10 perflaske, og begge bedriftene har årlige faste kostnader på kr 500 000.</p>
+<p>Ved Cournot konkurranse i dette markedet vil optimal produksjon for hvert av bryggeriene være på 27 500 flasker, til en pris på kr 65 per flaske. Dette vil gi bedriftene en profitt på 1 012 500.</p>
+<p>Anta at bryggeriene blir enige om å koordinere sin adferd. De avtaler å sette monopolpris og å dele markedet likt mellom seg. Videre avtaler de at hvis en av dem i en periode avviker fra denne avtalen, vil de begge i alle framtidige perioder opptre som konkurrenter.</p>
+<p>a) Hva vil total produksjon av øl være hvis bryggeriene velger samarbeid og hvor mye vil bryggeriene tjene på dette?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Skriv svar her</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>b) Hvor mye vil Graff Brygghus tjene på å avvike fra samarbeidsavtalen med Bryggeri 13 i en periode?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Skriv svar her</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>c) Hvor stor må diskonteringsfaktoren være for at bryggeriene skal ha incentiver til å opprettholde samarbeidsavtalen over tid?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Skriv svar her</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prissamarbeid-med-bertrand-modell">Prissamarbeid med Bertrand-modell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profitt-ved-prissamarbeid">Profitt ved prissamarbeid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabell-for-oppsummering">Tabell for oppsummering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fangens-dilemma">Fangens dilemma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prissamarbeid-cournot-modell">Prissamarbeid cournot-modell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totalinntekt-og-marginalinntekt">Totalinntekt og marginalinntekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reaksjonsfunksjoner">Reaksjonsfunksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisk-likevekt">Symmetrisk likevekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-pris">Optimal pris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profitt">Profitt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-med-avvik-i-cournot-modellen">Optimal tilpasning med avvik i cournot-modellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Tabell for oppsummering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Fangens dilemma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prissamarbeid-med-gjentatte-spill">Prissamarbeid med gjentatte spill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nar-vil-det-lonne-seg-a-sammarbeide-under-bertrand-konkurranse">Når vil det lønne seg å sammarbeide under Bertrand konkurranse?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-prissamarbeid">Oppgave prissamarbeid</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

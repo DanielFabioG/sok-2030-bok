@@ -15,6 +15,8 @@ chapters:
 - file: notebooks/5/Seminar_5.1_-_Sekvensiell_priskonkurranse.ipynb
 - file: notebooks/5/Seminar_5.2_-_Sekvensiell_kvantumkonkurranse.ipynb
 - file: notebooks/6/Seminar_6_-_Prissamarbeid.ipynb
+- file: notebooks/7/Seminar_7.1_-_Horisonetale_fusjoner.ipynb
+- file: notebooks/7/Seminar_7.2_-_Vertikale_fusjoner.ipynb
 - file: notebooks/løsningsforslag/Seminar_1.3_-_Løsningsforslag_på_oppgave_1.ipynb
 - file: notebooks/løsningsforslag/Seminar_2.3_-_Løsningsforslag_på_oppgave_2.ipynb
 - file: notebooks/løsningsforslag/Seminar_3.3_-_Løsningsforslag_på_oppgave_3.ipynb

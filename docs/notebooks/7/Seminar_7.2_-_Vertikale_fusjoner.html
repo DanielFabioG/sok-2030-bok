@@ -57,6 +57,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/7/Seminar_7.2_-_Vertikale_fusjoner';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -394,6 +396,20 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertikale-fusjoner-og-dobbel-marginalisering">Vertikale fusjoner og dobbel-marginalisering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-trinns-spill">To-trinns spill</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-2-nedstromsbedriften-velger-kvantum-og-pris-i-sluttbrukermarkedet">Trinn 2: Nedstrømsbedriften velger kvantum og pris i sluttbrukermarkedet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-1-oppstromsbedriften-velger-optimal-pris-r">Trinn 1: Oppstrømsbedriften velger optimal pris <span class="math notranslate nohighlight">\(r\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertikal-integrasjon">Vertikal integrasjon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertikale-fusjoner">Vertikale fusjoner</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">To-trinns spill:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-2-nedstromsbedriftene-velger-optimalt-kvantum-og-pris-i-sluttbrukermarkedet">Trinn 2: Nedstrømsbedriftene velger optimalt kvantum og pris i sluttbrukermarkedet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-der-mr-mc">Optimal tilpasning der MR = MC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monopoltilpasning-for-m2">Monopoltilpasning for M2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimalt-kvantum-og-pris-i-sluttbrukermarkedet">Optimalt kvantum og pris i sluttbrukermarkedet</a></li>
 </ul>
             </nav>
         </div>
@@ -419,6 +435,854 @@ document.write(`
 <h2>Vertikale fusjoner og dobbel-marginalisering<a class="headerlink" href="#vertikale-fusjoner-og-dobbel-marginalisering" title="Link to this heading">#</a></h2>
 <p>I det siste seminaret skal vi nå se på hvordan vertikale fusjoner kan være en løsning på problemet med dobbel-marginalisering. Vi skal se på hvordan en vertikal fusjon kan føre til lavere priser og høyere profitt for produsenten, og hvordan dette kan påvirke forbrukerne.</p>
 <p>Vi antar at vi har to bedrifter, en oppstrømsbedrift som produserer en vare og en nedstrømsbedrift som distribuerer varen.</p>
+<p>Etterspørselen etter varen er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = \frac{a - P}{b}
+\]</div>
+<p>hvor <span class="math notranslate nohighlight">\(Q\)</span> er etterspørselen, <span class="math notranslate nohighlight">\(P\)</span> er prisen, og <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> er konstanter. Vi gjør også antagelsen at <span class="math notranslate nohighlight">\(a &gt; 0\)</span> og <span class="math notranslate nohighlight">\(b &gt; 0\)</span>.</p>
+<p>Oppstrømsbedriften produserer innsatsfaktor som selges til nedstrømsbedriften til en pris lik <span class="math notranslate nohighlight">\(r\)</span>, og har marginalkostnad <span class="math notranslate nohighlight">\(c\)</span>. Nedstrømsbedriften har kun innkjøpskostnaden <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p>Vi regner det ut algebraisk i kode, så for å få tallverdier som svar, så setter man bare inn verdier for <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> og <span class="math notranslate nohighlight">\(r\)</span> i koden.</p>
+<p>Som normalt trenger vi å finne invers etterspørsel, og løser dette ved å isolere <span class="math notranslate nohighlight">\(P\)</span> i etterspørselen:</p>
+<div class="math notranslate nohighlight">
+\[
+P = a - bQ
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definerer symboler</span>
+<span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">q_1</span><span class="p">,</span><span class="n">q_2</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;P Q q_1 q_2 b c r a&#39;</span><span class="p">)</span>
+
+<span class="c1"># Definerer etterspørselsfunksjonen</span>
+<span class="n">Etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># Løser for P</span>
+<span class="n">Invers_etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">P</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Viser løsningene</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">Invers_etterspørsel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} = \frac{- P + a}{b}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a - b q_{1}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Totalinntekt</span>
+<span class="n">Totalinntekt</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span> <span class="o">*</span> <span class="n">q_1</span>
+
+<span class="c1"># Viser totalinntekt</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} \left(a - b q_{1}\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Marginalinntekt</span>
+<span class="n">Marginalinntekt_1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)</span>
+
+<span class="c1"># Viser marginalinntekt</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Marginalinntekt_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a - 2 b q_{1}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter marginalinntekt lik optimal pris</span>
+<span class="n">Marginalkostnad</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_1</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="c1"># Viser marginalkostnad</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Marginalkostnad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a - 2 b q_{1} = r\]</div>
+</div>
+</div>
+</section>
+<section id="to-trinns-spill">
+<h2>To-trinns spill<a class="headerlink" href="#to-trinns-spill" title="Link to this heading">#</a></h2>
+<p>Hvor trinn 1 er at oppstrømsbedriften velger optimal pris i innsatsfaktormarkedet <span class="math notranslate nohighlight">\(r\)</span>, og trinn 2 er at nedstrømsbedriften velger kvantum og pris i sluttbrukermarkedet.</p>
+<section id="trinn-2-nedstromsbedriften-velger-kvantum-og-pris-i-sluttbrukermarkedet">
+<h3>Trinn 2: Nedstrømsbedriften velger kvantum og pris i sluttbrukermarkedet<a class="headerlink" href="#trinn-2-nedstromsbedriften-velger-kvantum-og-pris-i-sluttbrukermarkedet" title="Link to this heading">#</a></h3>
+<p>Videre så har vi baklengs induksjon, og starter med trinn 2.</p>
+<p>Vi multipliserer invers etterspørsel med kvantum <span class="math notranslate nohighlight">\(q_1\)</span> for å få total inntekt <span class="math notranslate nohighlight">\(TR\)</span> til nedstrømsbedriften:</p>
+<div class="math notranslate nohighlight">
+\[
+TR = P \cdot q_1 =  q_{1} \left(a - b q_{1}\right)
+\]</div>
+<p>Deretter så finner vi marginalinntekt <span class="math notranslate nohighlight">\(MR\)</span> ved å derivere <span class="math notranslate nohighlight">\(TR\)</span> med hensyn på <span class="math notranslate nohighlight">\(q_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+MR = \frac{dTR}{dq_1} = a - 2bq_1
+\]</div>
+<p>Nedstrømsbedriften maksimerer profitt ved å sette <span class="math notranslate nohighlight">\(MR = r\)</span>, og vi får:</p>
+<div class="math notranslate nohighlight">
+\[
+MR = r \implies a - 2bq_1 = r \implies q_1 = \frac{a - r}{2b}
+\]</div>
+<p>Nedstrømsbedriften setter prisen <span class="math notranslate nohighlight">\(P\)</span> i henhold til invers etterspørsel:</p>
+<div class="math notranslate nohighlight">
+\[
+P = a - bq_1 = a - b \cdot \frac{a - r}{2b} = \frac{a + r}{2}
+\]</div>
+<p>Nedstrømsbedriften har nå funnet sitt optimale kvantum og pris, og vi kan nå gå videre til trinn 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q_1</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Marginalkostnad</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Viser optimalt kvantum</span>
+<span class="n">display</span><span class="p">(</span><span class="n">q1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a - r}{2 b}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter så optimalt kvantum inn i invers etterspørsel for å finne optimal pris</span>
+<span class="n">Optimal_pris</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q1</span><span class="p">)</span>
+
+<span class="c1"># Viser optimal pris</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Optimal_pris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a}{2} + \frac{r}{2}\]</div>
+</div>
+</div>
+</section>
+<section id="trinn-1-oppstromsbedriften-velger-optimal-pris-r">
+<h3>Trinn 1: Oppstrømsbedriften velger optimal pris <span class="math notranslate nohighlight">\(r\)</span><a class="headerlink" href="#trinn-1-oppstromsbedriften-velger-optimal-pris-r" title="Link to this heading">#</a></h3>
+<p>Oppstrømsbedriften selger samme kvantum som nedstrømsbedriften <span class="math notranslate nohighlight">\(q_1\)</span> og står ovenfor en invers etterspørsel:</p>
+<div class="math notranslate nohighlight">
+\[
+r = a-2bq_2
+\]</div>
+<p>Finner totalinntekt <span class="math notranslate nohighlight">\(TR\)</span> til oppstrømsbedriften:</p>
+<div class="math notranslate nohighlight">
+\[
+TR = r \cdot q_2 = \left(a - 2bq_2\right)q_2 = aq_2 - 2bq_2^2
+\]</div>
+<p>Deretter finner vi marginalinntekt <span class="math notranslate nohighlight">\(MR\)</span> ved å derivere <span class="math notranslate nohighlight">\(TR\)</span> med hensyn på <span class="math notranslate nohighlight">\(q_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+MR = \frac{dTR}{dq_2} = a - 4bq_2
+\]</div>
+<p>Oppstrømsbedriften maksimerer profitt ved å sette <span class="math notranslate nohighlight">\(MR = c\)</span>, og løser for <span class="math notranslate nohighlight">\(q_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+MR = c \implies a - 4bq_2 = c \implies q_2 = \frac{a - c}{4b}
+\]</div>
+<p>Finner optimal pris FRA oppstrømsbedriften:
+$<span class="math notranslate nohighlight">\(
+r = a - 2bq_2 = a - 2b \cdot \frac{a - c}{4b} = \frac{a + c}{2}
+\)</span>$</p>
+<p>Finner prisen nedstrømsbedriften setter ved å ta totalt kvantum og pris fra oppstrømsbedriften inn i etterspørselen til nedstrømsbedriften:</p>
+<div class="math notranslate nohighlight">
+\[
+P = a - bq_1 = a - b \cdot \frac{a - c}{4b} =  \frac{3 a}{4} + \frac{c}{4}
+\]</div>
+<p>Optimalt kvantum i sluttbrukermarkedet:</p>
+<div class="math notranslate nohighlight">
+\[
+q_1 = \frac{a - c}{4b}
+\]</div>
+<p>Profitt for oppstrømsbedriften:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_{up} = \left(\frac{a + c}{2} - c\right)q_2 = \left(\frac{a - c}{2}\right)q_2 = \frac{(a - c)^2}{8b}
+\]</div>
+<p>Profitt for nedstrømsbedriften:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_{down} = \left(\frac{3 a}{4} + \frac{c}{4} - r\right)q_1 = \left(\frac{3 a}{4} + \frac{c}{4} - \frac{a + c}{2}\right)q_1 = \left(\frac{a - c}{4}\right)q_1 = \frac{(a - c)^2}{16b}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Substituerer inn q_2 i marginalinntekt</span>
+<span class="n">Marginalinntekt_2</span> <span class="o">=</span> <span class="n">Marginalinntekt_1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">)</span>
+
+<span class="c1"># Oppstrømsbedriftens etterspørsel</span>
+<span class="n">Invers_etterspørsel_oppstrom</span><span class="o">=</span> <span class="n">Marginalinntekt_2</span> <span class="o">*</span> <span class="n">q_2</span>
+
+<span class="c1"># Viser oppstrømsbedriftens etterspørsel</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Invers_etterspørsel_oppstrom</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{2} \left(a - 2 b q_{2}\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deriverer totalinntekt med hensyn på q_2</span>
+
+<span class="n">Marginalinntekt_2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Invers_etterspørsel_oppstrom</span><span class="p">,</span> <span class="n">q_2</span><span class="p">)</span>
+
+<span class="c1"># Viser marginalinntekt</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Marginalinntekt_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a - 4 b q_{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter marginalinntekt lik marginalkostnad</span>
+<span class="n">Marginalkostnad</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_2</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># Viser marginalkostnad</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Marginalkostnad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a - 4 b q_{2} = c\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q_2 for å finne optimal kvantum for oppstrømsbedriften</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Marginalkostnad</span><span class="p">,</span> <span class="n">q_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Viser optimalt kvantum for oppstrømsbedriften</span>
+<span class="n">display</span><span class="p">(</span><span class="n">q2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a - c}{4 b}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal pris FRA oppstrømsbedriften</span>
+
+<span class="n">Optimal_pris_oppstrom</span> <span class="o">=</span> <span class="n">Marginalinntekt_1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q2</span><span class="p">)</span>
+
+<span class="c1"># Viser optimal pris for oppstrømsbedriften</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Optimal_pris_oppstrom</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a}{2} + \frac{c}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finner prisen nedstrømsbedriften setter ved å ta totalt kvantum og pris fra oppstrømsbedriften inn i etterspørselen til nedstrømsbedriften</span>
+
+<span class="n">Optimal_pris_nedstrom</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q2</span><span class="p">)</span>
+
+<span class="c1"># Viser optimal pris for nedstrømsbedriften</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Optimal_pris_nedstrom</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{3 a}{4} + \frac{c}{4}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a - c}{4 b}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimalt kvantum i sluttmarkedet</span>
+<span class="n">Optimal_kvantum_q1</span> <span class="o">=</span> <span class="n">q1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">Optimal_pris_oppstrom</span><span class="p">)</span>
+
+<span class="c1"># Viser optimalt kvantum i sluttmarkedet</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Optimal_kvantum_q1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a - c}{4 b}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for oppstrømsbedriften</span>
+<span class="n">Profitt_oppstrom</span> <span class="o">=</span> <span class="p">(</span><span class="n">Optimal_pris_oppstrom</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">*</span> <span class="n">q2</span>
+
+<span class="c1"># Viser profitt for oppstrømsbedriften</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Profitt_oppstrom</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(a - c\right)^{2}}{8 b}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for nedstrømsbedriften</span>
+<span class="n">Profitt_nedstrom</span> <span class="o">=</span> <span class="p">(</span><span class="n">Optimal_pris_nedstrom</span> <span class="o">-</span> <span class="n">Optimal_pris_oppstrom</span><span class="p">)</span> <span class="o">*</span> <span class="n">Optimal_kvantum_q1</span> 
+
+<span class="c1"># Viser profitt for nedstrømsbedriften</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Profitt_nedstrom</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(a - c\right)^{2}}{16 b}\]</div>
+</div>
+</div>
+</section>
+</section>
+<section id="vertikal-integrasjon">
+<h2>Vertikal integrasjon<a class="headerlink" href="#vertikal-integrasjon" title="Link to this heading">#</a></h2>
+<p>Vi antar at oppstrømsbedriften fusjonerer med nedstrømsbedriften, og at de nå er en og samme bedrift og opptre som monopolist. Vi ser på hvordan dette påvirker prisen og profitt.</p>
+<p>Det vi får er et monopol, så vi følger samme fremgangsmåte som seminar 1.1.</p>
+<p>Oppsummert så får vi ny optimal pris og kvantum og profitt for den fusjonerte bedriften:</p>
+<div class="math notranslate nohighlight">
+\[
+P = \frac{a + c}{2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+Q = \frac{a - c}{2b}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\pi_{merged} = \left(\frac{a + c}{2} - c\right)Q = \left(\frac{a - c}{2}\right)Q = \frac{(a - c)^2}{4b}
+\]</div>
+<p>Som vi kan se så er profitt for den fusjonerte bedriften høyere enn summen av profitt for oppstrøms- og nedstrømsbedriftene før fusjonen:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_{merged} = \frac{(a - c)^2}{4b} &gt; \pi_{up} + \pi_{down} = \frac{(a - c)^2}{8b} + \frac{(a - c)^2}{16b} = \frac{3(a - c)^2}{16b}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definerer inverse etterspørselen</span>
+<span class="n">Invers_etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">Q</span><span class="p">)</span>
+
+<span class="c1"># Viser invers etterspørsel</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Invers_etterspørsel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle P = - Q b + a\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Totalinntekt</span>
+<span class="n">Totalinntekt</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">rhs</span> <span class="o">*</span> <span class="n">Q</span>
+
+<span class="c1"># Viser totalinntekt</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle Q \left(- Q b + a\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Marginalinntekt</span>
+<span class="n">Marginalinntekt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="n">Q</span><span class="p">)</span>
+
+<span class="c1"># Viser marginalinntekt</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Marginalinntekt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 Q b + a\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter marginalinntekt lik marginalkostnad</span>
+
+<span class="n">Marginalkostnad</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># Viser marginalkostnad</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Marginalkostnad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 Q b + a = c\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for kvantum</span>
+<span class="n">Optimal_Q</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Marginalkostnad</span><span class="p">,</span> <span class="n">Q</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Viser optimalt kvantum</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Optimal_Q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a - c}{2 b}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for pris</span>
+
+<span class="n">Optimal_pris</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">Optimal_Q</span><span class="p">)</span>
+
+<span class="c1"># Viser optimal pris</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Optimal_pris</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{a}{2} + \frac{c}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for monopolist etter vertikal integrasjon</span>
+<span class="n">Profitt_monopolist</span> <span class="o">=</span> <span class="p">(</span><span class="n">Optimal_pris</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">*</span> <span class="n">Optimal_Q</span>
+
+<span class="c1"># Viser profitt for monopolist etter vertikal integrasjon</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Profitt_monopolist</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(a - c\right)^{2}}{4 b}\]</div>
+</div>
+</div>
+</section>
+<section id="vertikale-fusjoner">
+<h2>Vertikale fusjoner<a class="headerlink" href="#vertikale-fusjoner" title="Link to this heading">#</a></h2>
+<p>Vi antar et marked bestående av to oppstrømsbedrifter, <span class="math notranslate nohighlight">\(M1\)</span> og <span class="math notranslate nohighlight">\(M2\)</span>, og to nedstrømsbedrifter, <span class="math notranslate nohighlight">\(R1\)</span> og <span class="math notranslate nohighlight">\(R2\)</span>.</p>
+<p>Invers ettersprøsel er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+P(Q) = A - B(q1+q2)
+\]</div>
+<p>Oppstrømsbedriftene produserer innsatsfaktor som selges til nedstrømsbedriftene til pris lik <span class="math notranslate nohighlight">\(w\)</span>. Oppstrømsbedriftene har marginalkostnader lik <span class="math notranslate nohighlight">\(c\)</span>, og nedstrømsbedriften har marginalkostand lik <span class="math notranslate nohighlight">\(k\)</span>, pluss innkjøpskostander på <span class="math notranslate nohighlight">\(w\)</span>.</p>
+<p>Vi antar nå at <span class="math notranslate nohighlight">\(M1\)</span> og <span class="math notranslate nohighlight">\(R1\)</span> fusjonerer, og at den fusjonerte bedriften ikke ønsker å selge innsatsfaktoren til <span class="math notranslate nohighlight">\(R2\)</span>. Vi ser på hvordan dette påvirker prisen og profitt.</p>
+<section id="id1">
+<h3>To-trinns spill:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Trinn 1: Oppstrømsbedriften <span class="math notranslate nohighlight">\(R2\)</span> velger optimal pris til nedstrømsbedriften <span class="math notranslate nohighlight">\(R2; w\)</span>
+Trinn 2: Nedstrømsbedriftene velger optimalt kvantum og pris i sluttbrukermarkedet; <span class="math notranslate nohighlight">\(P\)</span></p>
+<p>Vi bruker baklengs induksjon og starter med Trinn 2.</p>
+</section>
+</section>
+<section id="trinn-2-nedstromsbedriftene-velger-optimalt-kvantum-og-pris-i-sluttbrukermarkedet">
+<h2>Trinn 2: Nedstrømsbedriftene velger optimalt kvantum og pris i sluttbrukermarkedet<a class="headerlink" href="#trinn-2-nedstromsbedriftene-velger-optimalt-kvantum-og-pris-i-sluttbrukermarkedet" title="Link to this heading">#</a></h2>
+<p>Marginalkostnader til den funksjonerte bedriften: <span class="math notranslate nohighlight">\(c + k\)</span></p>
+<p>Marginalkostnad til <span class="math notranslate nohighlight">\(R2\)</span> er <span class="math notranslate nohighlight">\(w\)</span> + <span class="math notranslate nohighlight">\(k\)</span>, hvor <span class="math notranslate nohighlight">\(w &gt; c\)</span></p>
+<p>Ikke ferdig med denne notatblokken.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qMR1</span><span class="p">,</span> <span class="n">qR2</span><span class="p">,</span>  <span class="n">qM2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">w</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">QR</span><span class="p">,</span> <span class="n">QM</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;q^MR_1 q^R_2 q^M_2 c k w A B Q^R Q^M P &#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">demand_1R</span><span class="p">(</span><span class="n">qMR1</span><span class="p">):</span>
+           <span class="k">return</span> <span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">qMR1</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">qR2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">demand_2R</span><span class="p">(</span><span class="n">qR2</span><span class="p">):</span>
+           <span class="k">return</span> <span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">qMR1</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">qR2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">marginalrevenue_1R</span><span class="p">(</span><span class="n">qMR1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">qMR1</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">qR2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">marginalrevenue_2R</span><span class="p">(</span><span class="n">qR2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">qMR1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">qR2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optimal-tilpasning-der-mr-mc">
+<h2>Optimal tilpasning der MR = MC<a class="headerlink" href="#optimal-tilpasning-der-mr-mc" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal tilpasning for R1 der MR = c + k</span>
+
+<span class="n">equ_MR1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">marginalrevenue_1R</span><span class="p">(</span><span class="n">qMR1</span><span class="p">),</span><span class="n">c</span><span class="o">+</span><span class="n">k</span><span class="p">)</span>
+<span class="n">equ_MR1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle A - 2 B q^{MR}_{1} - B q^{R}_{2} = c + k\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal tilpasning for R2 der MR = w + k</span>
+
+<span class="n">equ_R2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">marginalrevenue_2R</span><span class="p">(</span><span class="n">qR2</span><span class="p">),</span><span class="n">w</span><span class="o">+</span><span class="n">k</span><span class="p">)</span>
+<span class="n">equ_R2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle A - B q^{MR}_{1} - 2 B q^{R}_{2} = k + w\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#reaksjonsfunksjon til bedrift 1</span>
+
+<span class="n">qMR1_equ</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">equ_MR1</span><span class="p">,</span> <span class="n">qMR1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">qMR1_equ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{A - B q^{R}_{2} - c - k}{2 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#reaksjonsfunksjon til bedrift 2</span>
+
+<span class="n">qR2_equ</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">equ_R2</span><span class="p">,</span><span class="n">qR2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">qR2_equ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{A - B q^{MR}_{1} - k - w}{2 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setter uttrykk for RF(q2) inn i RF(q1)</span>
+
+<span class="n">qMR1_unresv_eq</span> <span class="o">=</span> <span class="n">qMR1_equ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">qR2</span><span class="p">,</span> <span class="n">qR2_equ</span><span class="p">)</span>
+<span class="n">qMR1_opt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">qMR1</span><span class="p">,</span> <span class="n">qMR1_unresv_eq</span><span class="p">),</span> <span class="n">qMR1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">qMR1_opt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{A - 2 c - k + w}{3 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kvantum for MR1</span>
+
+<span class="n">qMR1_unresv</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">qMR1</span><span class="p">,</span> <span class="n">qMR1_opt</span><span class="p">)</span>
+<span class="n">qMR1_unresv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q^{MR}_{1} = \frac{A - 2 c - k + w}{3 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setter uttrykk for RF(q1) inn i RF(q2)</span>
+
+<span class="n">qR2_unresv_eq</span> <span class="o">=</span> <span class="n">qR2_equ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">qMR1</span><span class="p">,</span> <span class="n">qMR1_equ</span><span class="p">)</span>
+<span class="n">qR2_opt</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">qR2</span><span class="p">,</span> <span class="n">qR2_unresv_eq</span><span class="p">),</span> <span class="n">qR2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">qR2_opt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{A + c - k - 2 w}{3 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kvantum for R2</span>
+
+<span class="n">qR2_unresv</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">qR2</span><span class="p">,</span> <span class="n">qR2_opt</span><span class="p">)</span>
+<span class="n">qR2_unresv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q^{R}_{2} = \frac{A + c - k - 2 w}{3 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Invers etterspørsel til M2 vil være lik optimalt kvantum til R2</span>
+<span class="n">w_equ</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">qR2_unresv</span><span class="p">,</span> <span class="n">w</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">w_equ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{A}{2} - \frac{3 B q^{R}_{2}}{2} + \frac{c}{2} - \frac{k}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Invers etterspørsel til M2</span>
+<span class="n">w_unresv</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">w_equ</span><span class="p">)</span>
+<span class="n">w_unresv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle w = \frac{A}{2} - \frac{3 B q^{R}_{2}}{2} + \frac{c}{2} - \frac{k}{2}\]</div>
+</div>
+</div>
+</section>
+<section id="monopoltilpasning-for-m2">
+<h2>Monopoltilpasning for M2<a class="headerlink" href="#monopoltilpasning-for-m2" title="Link to this heading">#</a></h2>
+<p>Siden M2 er eneste tilbyder til R2 vil vi bedriften opptre som monopolist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">demand_2M</span><span class="p">(</span><span class="n">qM2</span><span class="p">):</span>
+           <span class="k">return</span> <span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">k</span><span class="o">+</span><span class="n">c</span><span class="o">-</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="p">(</span><span class="n">qM2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">marginalrevenue_2M</span><span class="p">(</span><span class="n">qM2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">A</span><span class="o">-</span><span class="n">k</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">qM2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal tilpasning der MR = c</span>
+
+<span class="n">qM2_equ</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">marginalrevenue_2M</span><span class="p">(</span><span class="n">qM2</span><span class="p">),</span><span class="n">c</span><span class="p">)</span>
+<span class="n">qM2_equ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{A}{2} - 3 B q^{M}_{2} + \frac{c}{2} - \frac{k}{2} = c\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># optimalt kvantum på trinn 2 for M2, som da også er salget for R2</span>
+
+<span class="n">qM2_equ</span><span class="o">=</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">qM2_equ</span><span class="p">,</span><span class="n">qM2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">qM2_equ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{A - c - k}{6 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For å finne pris til nedstømsberiften R2 setter vi qM2 inn etterspørselsfunskjonen, som er w = (a-k+c)/2-3B/2*qR2 </span>
+
+<span class="n">w_opt</span><span class="o">=</span><span class="n">w_unresv</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">qR2</span><span class="p">:</span><span class="n">qM2_equ</span><span class="p">})</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">w_opt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle A = - 3 c + k + 4 w\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pris på innsatsfaktor til R2</span>
+<span class="n">w_equ</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">w_opt</span><span class="p">,</span> <span class="n">w</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">w_equ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{A}{4} + \frac{3 c}{4} - \frac{k}{4}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w_unresv</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">w_equ</span><span class="p">)</span>
+<span class="n">w_unresv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle w = \frac{A}{4} + \frac{3 c}{4} - \frac{k}{4}\]</div>
+</div>
+</div>
+</section>
+<section id="optimalt-kvantum-og-pris-i-sluttbrukermarkedet">
+<h2>Optimalt kvantum og pris i sluttbrukermarkedet<a class="headerlink" href="#optimalt-kvantum-og-pris-i-sluttbrukermarkedet" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="c1"># Vi setter w_equ inn i optimalt kvantum for den vertikalt integrete bedriften og for salg fra MR1 til sluttbruker: </span>
+
+<span class="n">qMR1_opt1</span><span class="o">=</span><span class="n">qMR1_opt</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">w</span><span class="p">:</span><span class="n">w_equ</span><span class="p">})</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">qMR1_opt1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{5 \left(A - c - k\right)}{12 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal pris til sluttbruker</span>
+
+<span class="n">demand_1R</span><span class="p">(</span><span class="n">qMR1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">qMR1</span><span class="p">:</span><span class="n">qMR1_opt1</span><span class="p">,</span><span class="n">qR2</span><span class="p">:</span><span class="n">qM2_equ</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{5 A}{12} + \frac{7 c}{12} + \frac{7 k}{12}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_equ</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">demand_1R</span><span class="p">(</span><span class="n">qMR1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">qMR1</span><span class="p">:</span><span class="n">qMR1_opt1</span><span class="p">,</span><span class="n">qR2</span><span class="p">:</span><span class="n">qM2_equ</span><span class="p">}))</span>
+<span class="n">P_equ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle P = \frac{5 A}{12} + \frac{7 c}{12} + \frac{7 k}{12}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt til MR1 er lik (p-k-c)qRM1:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">profitt</span><span class="p">(</span><span class="n">qMR1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">demand_1R</span><span class="p">(</span><span class="n">qMR1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">qMR1</span><span class="p">:</span><span class="n">qMR1_opt1</span><span class="p">,</span><span class="n">qR2</span><span class="p">:</span><span class="n">qM2_equ</span><span class="p">})</span><span class="o">-</span><span class="n">k</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">qMR1_opt1</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">profitt</span><span class="p">(</span><span class="n">qMR1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{25 \left(- A + c + k\right)^{2}}{144 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt til R2 er lik (p-k-w)qM2:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">profitt</span><span class="p">(</span><span class="n">qR2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">demand_1R</span><span class="p">(</span><span class="n">qMR1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">qMR1</span><span class="p">:</span><span class="n">qMR1_opt1</span><span class="p">,</span><span class="n">qR2</span><span class="p">:</span><span class="n">qM2_equ</span><span class="p">})</span><span class="o">-</span><span class="n">k</span><span class="o">-</span><span class="n">w</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">w</span><span class="p">:</span><span class="n">w_equ</span><span class="p">}))</span><span class="o">*</span><span class="n">qM2_equ</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">profitt</span><span class="p">(</span><span class="n">qR2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(- A + c + k\right)^{2}}{36 B}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt til M2 er lik (w-c)qM2:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">profitt</span><span class="p">(</span><span class="n">qM2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">w_equ</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">qM2_equ</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">profitt</span><span class="p">(</span><span class="n">qM2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(- A + c + k\right)^{2}}{24 B}\]</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -487,6 +1351,20 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertikale-fusjoner-og-dobbel-marginalisering">Vertikale fusjoner og dobbel-marginalisering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-trinns-spill">To-trinns spill</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-2-nedstromsbedriften-velger-kvantum-og-pris-i-sluttbrukermarkedet">Trinn 2: Nedstrømsbedriften velger kvantum og pris i sluttbrukermarkedet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-1-oppstromsbedriften-velger-optimal-pris-r">Trinn 1: Oppstrømsbedriften velger optimal pris <span class="math notranslate nohighlight">\(r\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertikal-integrasjon">Vertikal integrasjon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertikale-fusjoner">Vertikale fusjoner</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">To-trinns spill:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trinn-2-nedstromsbedriftene-velger-optimalt-kvantum-og-pris-i-sluttbrukermarkedet">Trinn 2: Nedstrømsbedriftene velger optimalt kvantum og pris i sluttbrukermarkedet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-tilpasning-der-mr-mc">Optimal tilpasning der MR = MC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monopoltilpasning-for-m2">Monopoltilpasning for M2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimalt-kvantum-og-pris-i-sluttbrukermarkedet">Optimalt kvantum og pris i sluttbrukermarkedet</a></li>
 </ul>
   </nav></div>
 

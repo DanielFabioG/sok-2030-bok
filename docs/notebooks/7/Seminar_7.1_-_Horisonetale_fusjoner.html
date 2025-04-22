@@ -993,7 +993,7 @@ Q = \frac{a - P}{b}
 <p>Vi starter med å finne invers etterspørsel for å finne prisen som funksjon av mengden som produseres. Denne er gitt ved å løse etterspørsel for <span class="math notranslate nohighlight">\(P\)</span> som før:</p>
 <div class="math notranslate nohighlight">
 \[
-a - P = bQ \Rightarrow P = a - bQ
+P = a - bQ
 \]</div>
 <p>Vi må også huske at siden vi har tre bedrifter, så er den totale mengden som produseres <span class="math notranslate nohighlight">\(Q = q_1 + q_2 + q_3\)</span>, der <span class="math notranslate nohighlight">\(q_i\)</span> er mengden produsert av bedrift <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <p>Løsningsmetoden blir den samme som tidligere, men det eneste vi trenger å vite er at den tredje bedriften har høyere kostnader, og at dette vil påvirke reaksjonsfunksjonen til den tredje bedriften.</p>
@@ -1049,7 +1049,7 @@ a - P = bQ \Rightarrow P = a - bQ
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Marginalinntekt</span> <span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="p">[</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">])]</span>
 
-<span class="c1"># Viser totalinntekten</span>
+<span class="c1"># Viser marginalinntekten</span>
 <span class="n">display</span><span class="p">(</span><span class="n">Marginalinntekt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Marginalinntekt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Marginalinntekt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>

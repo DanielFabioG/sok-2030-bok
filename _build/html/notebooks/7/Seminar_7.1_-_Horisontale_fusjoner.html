@@ -1,0 +1,1293 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Seminar 7.1: Horisontale fusjoner &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/7/Seminar_7.1_-_Horisontale_fusjoner';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Seminar 7.2: Vertikale fusjoner og integrasjon" href="Seminar_7.2_-_Vertikale_fusjoner_og_integrasjon.html" />
+    <link rel="prev" title="Seminar 6: Prissamarbeid" href="../6/Seminar_6_-_Prissamarbeid.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduksjon
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1/Seminar_1.1_-_Optimal_tilpasning_ved_monopol.html">Seminar 1.1: Optimal tilpasning ved monopol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1/Seminar_1.2_-_Monopol_og_tredjegrads_prisdiskriminering.html">Seminar 1.2: Monopol og tredje grads prisdiskriminering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/Seminar_2.1_-_Monopol_og_prisdiskriminering%2C_to-delt_tariff.html">Seminar 2.1: Monopol og prisdiskriminering, to-delt tariff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2/Seminar_2.2_-_Monopol_og_produktdifferensiering.html">Seminar 2.2: Monopol og produktdifferensiering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3/Seminar_3.1_-_Cournot_modell_med_symmetriske_bedrifter.html">Seminar 3.1: Cournot-modellen med symmetriske bedrifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3/Seminar_3.2_-_Cournot_modell_med_asymmetriske_bedrifter.html">Seminar 3.2: Cournot modell med asymmetriske bedrifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4/Seminar_4.1_-_Bertrand_modell_med_kapasitetsbegrensninger.html">Seminar 4.1: Bertrand modell med kapasitetsbegrensninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4/Seminar_4.2_-_Bertrand_konkurranse_og_differensiering.html">Seminar 4.2: Bertrand konkurranse og differensierte produkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.1_-_Sekvensiell_priskonkurranse.html">Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.2_-_Sekvensiell_kvantumkonkurranse.html">Seminar 5.2: Sekvensiell kvantumskonkurranse (Stackelberg med kvantum)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6/Seminar_6_-_Prissamarbeid.html">Seminar 6: Prissamarbeid</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Seminar 7.1: Horisontale fusjoner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seminar_7.2_-_Vertikale_fusjoner_og_integrasjon.html">Seminar 7.2: Vertikale fusjoner og integrasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html">Løsningsforslag monopol og tredjegrads prisdiskriminering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_2.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_2.html">Løsningsforslag - monopol og produktdifferensiering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_3.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_3.html">Løsningsforslag Cournot modell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_4.3_-_L%C3%B8sningsforslag_-_Bertrand_modell.html">Løsningsforslag Bertrand konkurranse og differensiering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_5.3_-_L%C3%B8sningsforslag_-_sekvensiell_konkurranse.html">Løsningsforslag sekvensiell konkurranse (Stackelberg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_6_L%C3%B8sningsforslag_-Prissamarbeid.html">Løsningsforslag - prissamarbeid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_7.3_L%C3%B8sningsforslag_-Vertikale_fusjoner_og_integrasjon.html">Løsningsforslag- horisontal og vertikal fusjon</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/7/Seminar_7.1_-_Horisontale_fusjoner.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/7/Seminar_7.1_-_Horisontale_fusjoner.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Seminar 7.1: Horisontale fusjoner</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#horisontale-fusjoner-og-fusjonsparadokset">Horisontale fusjoner og fusjonsparadokset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totalinntekt-og-marginalinntekt">Totalinntekt og marginalinntekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reaksjonsfunksjoner">Reaksjonsfunksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisk-likevekt">Symmetrisk likevekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likevektspris">Likevektspris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profitt">Profitt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#horisontal-fusjon">Horisontal fusjon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Totalinntekt og marginalinntekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppsummering-av-cournot-modellen-med-to-bedrifter">Oppsummering av cournot-modellen med to bedrifter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#horisontale-fusjoner-og-kostnadssynergier">Horisontale fusjoner og kostnadssynergier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Horisontal fusjon</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="seminar-7-1-horisontale-fusjoner">
+<h1>Seminar 7.1: Horisontale fusjoner<a class="headerlink" href="#seminar-7-1-horisontale-fusjoner" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="horisontale-fusjoner-og-fusjonsparadokset">
+<h2>Horisontale fusjoner og fusjonsparadokset<a class="headerlink" href="#horisontale-fusjoner-og-fusjonsparadokset" title="Link to this heading">#</a></h2>
+<p>I dette seminaret skal vi begynne med å se på horisontale fusjoner og fusjonsparadokset. Vi antar at vi har tre bedrifter som konkurrerer med kvantum som strategisk variabel. Når de har kvantum som strategisk variabel, og vi har tre bedrifter, og bruker en cournot-modell.</p>
+<p>Vi har en etterspørsel som er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = 150 - P
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(Q\)</span> er mengden som etterspørres, <span class="math notranslate nohighlight">\(P\)</span> er prisen.</p>
+<p>Tidligere har vi sett på en Cournot-modell med to bedrifter, mens nå skal vi se på en Cournot-modell med tre bedrifter.</p>
+<p>Marginalkostnaden er konstant og lik <span class="math notranslate nohighlight">\(MC = 30\)</span> for alle tre bedrifter. Vi antar at de tre bedriftene har samme kostnadsstruktur, og noen ganger defineres dette også som <span class="math notranslate nohighlight">\(c\)</span>, eller bare kostnad, så man ikke blir forvirret.</p>
+<p>Vi starter med å finne invers etterspørsel for å finne prisen som funksjon av mengden som produseres. Denne er gitt ved å løse etterspørsel for <span class="math notranslate nohighlight">\(P\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = 150 - P  \Rightarrow P = 150 - Q
+\]</div>
+<p>Vi må også huske at siden vi har tre bedrifter, så er den totale mengden som produseres <span class="math notranslate nohighlight">\(Q = q_1 + q_2 + q_3\)</span>, der <span class="math notranslate nohighlight">\(q_i\)</span> er mengden produsert av bedrift <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Vi kan nå skrive om prisen som funksjon av <span class="math notranslate nohighlight">\(q_1\)</span>, <span class="math notranslate nohighlight">\(q_2\)</span> og <span class="math notranslate nohighlight">\(q_3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P = 150 - (q_1 + q_2 + q_3)
+\]</div>
+</section>
+<section id="totalinntekt-og-marginalinntekt">
+<h2>Totalinntekt og marginalinntekt<a class="headerlink" href="#totalinntekt-og-marginalinntekt" title="Link to this heading">#</a></h2>
+<p>Finner så totalinntekten til hver bedrift, som er gitt ved prisen ganget med kvantum:</p>
+<div class="math notranslate nohighlight">
+\[
+TR_i = P \cdot q_i = (150 - (q_1 + q_2 + q_3)) \cdot q_i \Rightarrow TR_i = 150 q_i - q_i (q_1 + q_2 + q_3)
+\]</div>
+<p>Finner så marginalinntekten, som er den deriverte av totalinntekten med hensyn på <span class="math notranslate nohighlight">\(q_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dTR_i}{dq_i} = 150 - (q_1 + q_2 + q_3) - q_i \Rightarrow MR_i = 150 - (q_1 + q_2 + q_3) - q_i
+\]</div>
+<p>For hver bedrift er marginalinntekten lik prisen minus <span class="math notranslate nohighlight">\(q_i\)</span>, som er mengden produsert av bedrift <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Vi kan også skrive dette som:</p>
+<div class="math notranslate nohighlight">
+\[
+MR_i = P - q_i
+\]</div>
+<p>Og for hver enkelte bedrift ser det slik ut:</p>
+<div class="math notranslate nohighlight">
+\[
+MR_1 =  - 2 q_{1} - q_{2} - q_{3} + 150
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+MR_2 =  - q_{1} - 2 q_{2} - q_{3} + 150
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+MR_3 =  - q_{1} - q_{2} - 2 q_{3} + 150
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definerer symbol</span>
+<span class="n">P</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">q_1</span><span class="p">,</span><span class="n">q_2</span><span class="p">,</span><span class="n">q_3</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;P Q q_1 q_2 q_3 b c&#39;</span><span class="p">)</span>
+
+<span class="c1"># Q = q_1 + q_2</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="n">q_1</span> <span class="o">+</span> <span class="n">q_2</span> <span class="o">+</span> <span class="n">q_3</span><span class="p">)</span>
+
+<span class="c1"># Definerer etterspørselsfunksjonen</span>
+<span class="n">Etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">150</span><span class="o">-</span><span class="n">P</span><span class="p">)</span>
+
+<span class="c1"># Løser for P</span>
+<span class="n">Invers_etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">P</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Viser løsningene</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">Invers_etterspørsel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} + q_{2} + q_{3} = 150 - P\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - q_{2} - q_{3} + 150\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vanlig metode</span>
+<span class="c1"># Multipliserer prisen med kvantumet for å finne totalinntekten</span>
+<span class="n">Totalinntekt1</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">q_1</span>
+<span class="n">Totalinntekt2</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">q_2</span>
+<span class="n">Totalinntekt3</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">q_3</span>
+
+<span class="c1"># Viser totalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Totalinntekt1</span><span class="p">,</span> <span class="n">Totalinntekt2</span><span class="p">,</span> <span class="n">Totalinntekt3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} \left(- q_{1} - q_{2} - q_{3} + 150\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{2} \left(- q_{1} - q_{2} - q_{3} + 150\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{3} \left(- q_{1} - q_{2} - q_{3} + 150\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Metode 2</span>
+<span class="c1"># Vi kan også gjøre dette i en liste</span>
+<span class="n">Totalinntekt</span> <span class="o">=</span> <span class="p">[</span><span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">q</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="p">[</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">]]</span>
+
+<span class="c1"># Viser totalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Totalinntekt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Totalinntekt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} \left(- q_{1} - q_{2} - q_{3} + 150\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{2} \left(- q_{1} - q_{2} - q_{3} + 150\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{3} \left(- q_{1} - q_{2} - q_{3} + 150\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vanlig metode</span>
+<span class="c1"># Deriverer totalinntekten for å finne marginalinntekten</span>
+<span class="n">Marginalinntekt_q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt1</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)</span>
+<span class="n">Marginalinntekt_q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt2</span><span class="p">,</span> <span class="n">q_2</span><span class="p">)</span>
+<span class="n">Marginalinntekt_q3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt3</span><span class="p">,</span> <span class="n">q_3</span><span class="p">)</span>
+
+<span class="c1"># Viser marginalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Marginalinntekt_q1</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Marginalinntekt_q2</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Marginalinntekt_q3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 q_{1} - q_{2} - q_{3} + 150\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - 2 q_{2} - q_{3} + 150\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - q_{2} - 2 q_{3} + 150\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Metode 2</span>
+<span class="c1"># Vi kan også derivere totalinntekten i en liste</span>
+<span class="n">Marginalinntekt</span> <span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="p">[</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">])]</span>
+
+<span class="c1"># Viser totalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Marginalinntekt</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">Marginalinntekt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Marginalinntekt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 q_{1} - q_{2} - q_{3} + 150\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - 2 q_{2} - q_{3} + 150\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - q_{2} - 2 q_{3} + 150\]</div>
+</div>
+</div>
+</section>
+<section id="reaksjonsfunksjoner">
+<h2>Reaksjonsfunksjoner<a class="headerlink" href="#reaksjonsfunksjoner" title="Link to this heading">#</a></h2>
+<p>Nå har vi regnet ut marginalinntekten, og vi kan sette denne lik marginalkostnaden for å finne optimal produksjon for hver bedrift. Vi setter <span class="math notranslate nohighlight">\(MR = c\)</span>, dvs. <span class="math notranslate nohighlight">\(MR = 30\)</span>, og løser for kvantum til bedrift <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+MR_i = 150 - (q_1 + q_2 + q_3) - q_i = 30 \Rightarrow 120 - (q_1 + q_2 + q_3) = q_i \Rightarrow q_i = 120 - (q_1 + q_2 + q_3)
+\]</div>
+<p>Vi kan nå skrive dette som en reaksjonsfunksjon for hver bedrift:</p>
+<div class="math notranslate nohighlight">
+\[
+q_1 = 120 - (q_2 + q_3)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+q_2 = 120 - (q_1 + q_3)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+q_3 = 120 - (q_1 + q_2)
+\]</div>
+</section>
+<section id="symmetrisk-likevekt">
+<h2>Symmetrisk likevekt<a class="headerlink" href="#symmetrisk-likevekt" title="Link to this heading">#</a></h2>
+<p>Nå har vi tre reaksjonsfunksjoner, og vi kan bruke disse til å finne den symmetriske likevekten. Vi antar at <span class="math notranslate nohighlight">\(q_1 = q_2 = q_3 = q^*\)</span>, og setter inn i reaksjonsfunksjonen:</p>
+<div class="math notranslate nohighlight">
+\[
+q^* = 120 - (q^* + q^*) \Rightarrow q^* = 120 - 2q^* \Rightarrow 3q^* = 120 \Rightarrow q^* = 30
+\]</div>
+<p>Dermed er likevektsproduksjonen for hver bedrift:</p>
+<div class="math notranslate nohighlight">
+\[
+q_{1}^* = q_{2}^* = q_{3}^* = 30
+\]</div>
+<p>Og den totale produksjonen er:</p>
+<div class="math notranslate nohighlight">
+\[
+Q^* = q_1^* + q_2^* + q_3^* = 30 + 30 + 30 = 90
+\]</div>
+</section>
+<section id="likevektspris">
+<h2>Likevektspris<a class="headerlink" href="#likevektspris" title="Link to this heading">#</a></h2>
+<p>For å finne likevektsprisen, setter vi inn den totale produksjonen i etterspørselen:</p>
+<p>Den inverse etterspørselen husker vi at er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+P = 150 - Q
+\]</div>
+<p>Og vi setter inn <span class="math notranslate nohighlight">\(Q^*\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P^* = 150 - Q^* = 150 - 90 = 60
+\]</div>
+</section>
+<section id="profitt">
+<h2>Profitt<a class="headerlink" href="#profitt" title="Link to this heading">#</a></h2>
+<p>Profitten til en bedrift er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_i = P \cdot q_i - c \cdot q_i = (P - c) \cdot q_i
+\]</div>
+<p>Vi setter inn for <span class="math notranslate nohighlight">\(P\)</span> og <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_i = (150 - Q - c) \cdot q_i = (150 - (q_1 + q_2 + q_3) - 30) \cdot q_i
+\]</div>
+<p>Vi setter inn for <span class="math notranslate nohighlight">\(q_1\)</span>, <span class="math notranslate nohighlight">\(q_2\)</span> og <span class="math notranslate nohighlight">\(q_3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_i = (150 - (q_1 + q_2 + q_3) - 30) \cdot q_i = (150 - (30 + 30 + 30) - 30) \cdot q_i = (150 - 90 - 30) \cdot q_i = 30 \cdot q_i
+\]</div>
+<p>Dermed er profitten til hver bedrift:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_i = 30 \cdot q_i = 30 \cdot 30 = 900
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi vet at marginalkostnaden er 30</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># Vanlig metode</span>
+<span class="c1"># Setter marginalinntekten lik kostnaden</span>
+<span class="n">likevekt_q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_q1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">likevekt_q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_q2</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">likevekt_q3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_q3</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">likevekt_q1</span><span class="p">,</span> <span class="n">likevekt_q2</span><span class="p">,</span> <span class="n">likevekt_q3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 q_{1} - q_{2} - q_{3} + 150 = 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - 2 q_{2} - q_{3} + 150 = 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - q_{2} - 2 q_{3} + 150 = 30\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Metode 2</span>
+<span class="c1"># Vi kan også sette marginalinntekten lik kostnaden i en liste</span>
+<span class="n">likevekt</span> <span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">q</span><span class="p">),</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">])]</span>
+
+<span class="c1"># Viser likevektene</span>
+<span class="n">display</span><span class="p">(</span><span class="n">likevekt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">likevekt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">likevekt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 q_{1} - q_{2} - q_{3} + 150 = 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - 2 q_{2} - q_{3} + 150 = 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - q_{2} - 2 q_{3} + 150 = 30\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for likevektene og lagrer dem i en liste</span>
+<span class="n">løsning</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">likevekt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">likevekt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">likevekt</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">))</span>
+
+<span class="c1"># Viser løsningene</span>
+<span class="n">display</span><span class="p">(</span><span class="n">løsning</span><span class="p">[</span><span class="n">q_1</span><span class="p">],</span> <span class="n">løsning</span><span class="p">[</span><span class="n">q_2</span><span class="p">],</span> <span class="n">løsning</span><span class="p">[</span><span class="n">q_3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 30\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal pris</span>
+<span class="n">optimal_pris</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+
+<span class="c1"># Viser optimal pris</span>
+<span class="n">display</span><span class="p">(</span><span class="n">optimal_pris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 60\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for en bedrift</span>
+<span class="n">profitt</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_pris</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">løsning</span><span class="p">[</span><span class="n">q_1</span><span class="p">]</span>
+
+<span class="c1"># Profitt for alle tre bedrifter</span>
+<span class="n">profitt_alle</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_pris</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">løsning</span><span class="p">[</span><span class="n">q_1</span><span class="p">]</span> <span class="o">+</span> <span class="n">løsning</span><span class="p">[</span><span class="n">q_2</span><span class="p">]</span> <span class="o">+</span> <span class="n">løsning</span><span class="p">[</span><span class="n">q_3</span><span class="p">])</span>
+
+<span class="c1"># Viser profitt for en bedrift og for alle tre bedrifter</span>
+<span class="n">display</span><span class="p">(</span><span class="n">profitt</span><span class="p">,</span> <span class="n">profitt_alle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 900\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2700\]</div>
+</div>
+</div>
+</section>
+<section id="horisontal-fusjon">
+<h2>Horisontal fusjon<a class="headerlink" href="#horisontal-fusjon" title="Link to this heading">#</a></h2>
+<p>Nå har vi sett på Cournot-modellen med tre bedrifter, og vi har funnet likevektsproduksjonen, prisen og profitten til hver bedrift. Nå skal vi se på hva som skjer hvis to av bedriftene fusjonerer, slik at det kun nå er to bedrifter igjen i markedet.</p>
+<p>Vi får en ny tilpasning til Cournot-modellen, der vi har to bedrifter som konkurrerer med kvantum som strategisk variabel. Vi antar at de to bedriftene har samme kostnadsstruktur, og at marginalkostnaden er konstant og lik <span class="math notranslate nohighlight">\(MC = 30\)</span> for begge bedrifter.</p>
+<p>Vi har fortsatt den samme inverse etterspørselen:</p>
+<div class="math notranslate nohighlight">
+\[
+P = 150 - Q
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(Q\)</span> er den totale produksjonen i markedet.</p>
+<p>Vi har nå to bedrifter, og vi kan skrive den totale produksjonen som:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = q_1 + q_2
+\]</div>
+<p>Vi kan nå skrive om prisen som funksjon av <span class="math notranslate nohighlight">\(q_1\)</span> og <span class="math notranslate nohighlight">\(q_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P = 150 - (q_1 + q_2)
+\]</div>
+</section>
+<section id="id1">
+<h2>Totalinntekt og marginalinntekt<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Finner så totalinntekten til hver bedrift, som er gitt ved prisen ganget med kvantum:</p>
+<div class="math notranslate nohighlight">
+\[
+TR_i = P \cdot q_i = (150 - (q_1 + q_2)) \cdot q_i \Rightarrow TR_i = 150q_i - q_i(q_1 + q_2)
+\]</div>
+<p>Finner så marginalinntekten, som er den deriverte av totalinntekten med hensyn på <span class="math notranslate nohighlight">\(q_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dTR_i}{dq_i} = 150 - (q_1 + q_2) - q_i \Rightarrow MR_i = 150 - (q_1 + q_2) - q_i
+\]</div>
+<p>For hver bedrift er marginalinntekten lik prisen minus <span class="math notranslate nohighlight">\(q_i\)</span>, som er mengden produsert av bedrift <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Vi kan også skrive dette som:</p>
+<div class="math notranslate nohighlight">
+\[
+MR_i = P - q_i
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q = q_1 + q_2</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="n">q_1</span> <span class="o">+</span> <span class="n">q_2</span><span class="p">)</span>
+
+<span class="c1"># Definerer etterspørselsfunksjonen</span>
+<span class="n">Etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">150</span><span class="o">-</span><span class="n">P</span><span class="p">)</span>
+
+<span class="c1"># Løser for P</span>
+<span class="n">Invers_etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">P</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Viser løsningene</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">Invers_etterspørsel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} + q_{2} = 150 - P\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - q_{2} + 150\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multipliserer prisen med kvantumet for å finne totalinntekten</span>
+<span class="n">Totalinntekt</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">q_1</span>
+<span class="n">Totalinntekt2</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">q_2</span>
+
+<span class="c1"># Viser totalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="n">Totalinntekt2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} \left(- q_{1} - q_{2} + 150\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{2} \left(- q_{1} - q_{2} + 150\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deriverer totalinntekten for å finne marginalinntekten</span>
+<span class="n">Marginalinntekt_q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)</span>
+<span class="n">Marginalinntekt_q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt2</span><span class="p">,</span> <span class="n">q_2</span><span class="p">)</span>
+
+<span class="c1"># Viser marginalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Marginalinntekt_q1</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">Marginalinntekt_q2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 q_{1} - q_{2} + 150\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - 2 q_{2} + 150\]</div>
+</div>
+</div>
+<p>For fremgangsmåten for to bedrifter i Cournot-modellen er det forklart i seminar 6, så vi skal ikke gå gjennom det her. Vi kan imidlertid oppsummere resultatene fra Cournot-modellen med to bedrifter.</p>
+</section>
+<section id="oppsummering-av-cournot-modellen-med-to-bedrifter">
+<h2>Oppsummering av cournot-modellen med to bedrifter<a class="headerlink" href="#oppsummering-av-cournot-modellen-med-to-bedrifter" title="Link to this heading">#</a></h2>
+<p>Bedriftene produserer 40 enheter hver, og den totale produksjonen i markedet blir 80 enheter. Prisen i markedet blir 70, og profitten til hver bedrift er 1600.</p>
+<p>Profitten til hver bedrift er høyere enn i Cournot-modellen med tre bedrifter, der profitten var 900. Dette er et eksempel på fusjonsparadokset, der fusjonen fører til høyere profitt for de gjenværende bedriftene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definerer marginalkostnaden</span>
+<span class="n">c_1</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="c1"># Om marginalkostnaden etter fusjon ikke er 30 så endrer man c_2 til den nye marginalkostnaden, samme gjelder for c_1</span>
+<span class="n">c_2</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># Setter marginalinntekten lik kostnaden</span>
+<span class="n">likevekt_q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_q1</span><span class="p">,</span> <span class="n">c_1</span><span class="p">)</span>
+<span class="n">likevekt_q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Marginalinntekt_q2</span><span class="p">,</span> <span class="n">c_2</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">likevekt_q1</span><span class="p">,</span> <span class="n">likevekt_q2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 q_{1} - q_{2} + 150 = 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - q_{1} - 2 q_{2} + 150 = 30\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q1 for å finne reaksjonsfunksjon til bedrift 1</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt_q1</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">q1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 60 - \frac{q_{2}}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q2 for å finne reaksjonsfunksjon til bedrift 2</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt_q2</span><span class="p">,</span> <span class="n">q_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">q2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 60 - \frac{q_{1}}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setter uttrykk for q2 inn i q1 for å finne likevektskvantum</span>
+<span class="n">likevekt_eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_2</span><span class="p">,</span> <span class="n">q2</span><span class="p">))</span>
+<span class="n">likevekt_eq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} = \frac{q_{1}}{4} + 30\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser symmetrisk likevekt for q1 og q2</span>
+<span class="n">optimal_q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt_eq</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">optimal_q2</span> <span class="o">=</span> <span class="n">q2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">optimal_q1</span><span class="p">)</span>
+
+
+<span class="n">display</span><span class="p">(</span><span class="n">optimal_q1</span><span class="p">,</span> <span class="n">optimal_q2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 40\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 40\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal Pris</span>
+<span class="n">optimal_P</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">q_1</span><span class="p">:</span> <span class="n">optimal_q1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">:</span> <span class="n">optimal_q2</span><span class="p">})</span>
+
+<span class="n">optimal_P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 70\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt</span>
+<span class="n">profitt</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_P</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span><span class="o">*</span><span class="n">optimal_q1</span>
+
+<span class="n">profitt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 1600\]</div>
+</div>
+</div>
+</section>
+<section id="horisontale-fusjoner-og-kostnadssynergier">
+<h2>Horisontale fusjoner og kostnadssynergier<a class="headerlink" href="#horisontale-fusjoner-og-kostnadssynergier" title="Link to this heading">#</a></h2>
+<p>Nå har vi sett på hva som skjer når to bedrifter fusjonerer, og vi har sett at dette kan føre til høyere profitt for de gjenværende bedriftene.</p>
+<p>Vi antar at vi har tre bedrifter som konkurrerer med kvantum som strategisk variabel. Vi har en etterspørsel som er gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = \frac{a - P}{b}
+\]</div>
+<p>der <span class="math notranslate nohighlight">\(Q\)</span> er mengden som etterspørres, <span class="math notranslate nohighlight">\(P\)</span> er prisen.</p>
+<p>Marginalkostnaden til to av bedriftene er konstant og lik <span class="math notranslate nohighlight">\(MC = 30\)</span>, mens den tredje bedriften har høyere kostnader lik <span class="math notranslate nohighlight">\(MC = 30b\)</span>, der <span class="math notranslate nohighlight">\(b &gt; 1\)</span>.</p>
+<p>Vi starter med å finne invers etterspørsel for å finne prisen som funksjon av mengden som produseres. Denne er gitt ved å løse etterspørsel for <span class="math notranslate nohighlight">\(P\)</span> som før:</p>
+<div class="math notranslate nohighlight">
+\[
+P = a - bQ
+\]</div>
+<p>Vi må også huske at siden vi har tre bedrifter, så er den totale mengden som produseres <span class="math notranslate nohighlight">\(Q = q_1 + q_2 + q_3\)</span>, der <span class="math notranslate nohighlight">\(q_i\)</span> er mengden produsert av bedrift <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Løsningsmetoden blir den samme som tidligere, men det eneste vi trenger å vite er at den tredje bedriften har høyere kostnader, og at dette vil påvirke reaksjonsfunksjonen til den tredje bedriften.</p>
+<p>I koden trenger man bare endre på variabelen <span class="math notranslate nohighlight">\(b\)</span> i den tredje bedriften, utifra hvor mye høyere kostnader den har. Det er ikke nødvendig å endre på noe annet i koden, da den vil fungere som før, eksempelvis hvis man lar <span class="math notranslate nohighlight">\(b = 1\)</span>, så vil marginalkostnaden til den tredje bedriften være lik <span class="math notranslate nohighlight">\(MC = 30\cdot 1\)</span>, som er lik 30, og dermed vil den ha samme kostnad som de to andre bedriftene, og utregningen vil bli den samme som før.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a b&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="c1"># Her definerer man bare b til å være hva enn man vil utifra hvor stor forskjellen er i marginalkostnadene til den tredje bedriften</span>
+<span class="c1">#b = 1</span>
+
+<span class="c1"># Q = q_1 + q_2</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="n">q_1</span> <span class="o">+</span> <span class="n">q_2</span> <span class="o">+</span> <span class="n">q_3</span><span class="p">)</span>
+
+<span class="c1"># Definerer etterspørselsfunksjonen</span>
+<span class="n">Etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">P</span><span class="p">)</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># Løser for P</span>
+<span class="n">Invers_etterspørsel</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">P</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Viser løsningene</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Etterspørsel</span><span class="p">,</span> <span class="n">Invers_etterspørsel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} + q_{2} + q_{3} = \frac{150 - P}{b}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - b q_{1} - b q_{2} - b q_{3} + 150\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Metode 2</span>
+<span class="n">Totalinntekt</span> <span class="o">=</span> <span class="p">[</span><span class="n">Invers_etterspørsel</span><span class="o">*</span><span class="n">q</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="p">[</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">]]</span>
+
+<span class="c1"># Viser totalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Totalinntekt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Totalinntekt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{1} \left(- b q_{1} - b q_{2} - b q_{3} + 150\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{2} \left(- b q_{1} - b q_{2} - b q_{3} + 150\right)\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle q_{3} \left(- b q_{1} - b q_{2} - b q_{3} + 150\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Marginalinntekt</span> <span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">,</span> <span class="p">[</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">])]</span>
+
+<span class="c1"># Viser marginalinntekten</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Marginalinntekt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Marginalinntekt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Marginalinntekt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 b q_{1} - b q_{2} - b q_{3} + 150\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - b q_{1} - 2 b q_{2} - b q_{3} + 150\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - b q_{1} - b q_{2} - 2 b q_{3} + 150\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vi vet at marginalkostnaden er 30 for to av bedriftene og at den tredje har 30*b</span>
+<span class="c1"># Setter inn verdiene i listen</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="o">*</span><span class="n">b</span><span class="p">]</span>
+
+<span class="c1"># Metode 2</span>
+<span class="n">likevekt</span> <span class="o">=</span> <span class="p">[</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Totalinntekt</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">q</span><span class="p">),</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">])]</span>
+
+<span class="c1"># Viser likevektene</span>
+<span class="n">display</span><span class="p">(</span><span class="n">likevekt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">likevekt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">likevekt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 b q_{1} - b q_{2} - b q_{3} + 150 = 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - b q_{1} - 2 b q_{2} - b q_{3} + 150 = 30\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - b q_{1} - b q_{2} - 2 b q_{3} + 150 = 30 b\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for likevektene og lagrer dem i en liste</span>
+<span class="n">løsning</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">likevekt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">likevekt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">likevekt</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">))</span>
+
+<span class="c1"># Viser løsningene</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">løsning</span><span class="p">[</span><span class="n">q_1</span><span class="p">]),</span> <span class="n">løsning</span><span class="p">[</span><span class="n">q_2</span><span class="p">],</span> <span class="n">løsning</span><span class="p">[</span><span class="n">q_3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{15 \left(b + 3\right)}{2 b}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{15 b + 45}{2 b}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{105 - 45 b}{2 b}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimal pris</span>
+<span class="n">optimal_pris</span> <span class="o">=</span> <span class="n">Invers_etterspørsel</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+
+<span class="c1"># Viser optimal pris</span>
+<span class="n">display</span><span class="p">(</span><span class="n">optimal_pris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{15 b}{2} + \frac{105}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Profitt for en bedrift</span>
+<span class="n">profitt</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_pris</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">løsning</span><span class="p">[</span><span class="n">q_1</span><span class="p">]</span>
+<span class="n">profitt_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_pris</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">løsning</span><span class="p">[</span><span class="n">q_2</span><span class="p">]</span>
+<span class="n">profitt_3</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_pris</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">*</span><span class="n">løsning</span><span class="p">[</span><span class="n">q_3</span><span class="p">]</span>
+
+<span class="c1"># Profitt for alle tre bedrifter</span>
+<span class="n">profitt_alle</span> <span class="o">=</span> <span class="p">(</span><span class="n">optimal_pris</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">løsning</span><span class="p">[</span><span class="n">q_1</span><span class="p">]</span> <span class="o">+</span> <span class="n">løsning</span><span class="p">[</span><span class="n">q_2</span><span class="p">]</span> <span class="o">+</span> <span class="n">løsning</span><span class="p">[</span><span class="n">q_3</span><span class="p">])</span>
+
+<span class="c1"># Viser profitt for en bedrift og for alle tre bedrifter</span>
+<span class="n">display</span><span class="p">(</span><span class="n">profitt</span><span class="p">,</span> <span class="n">profitt_2</span><span class="p">,</span> <span class="n">profitt_3</span><span class="p">,</span> <span class="n">profitt_alle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(\frac{15 b}{2} + \frac{45}{2}\right) \left(15 b + 45\right)}{2 b}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(\frac{15 b}{2} + \frac{45}{2}\right) \left(15 b + 45\right)}{2 b}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(\frac{105}{2} - \frac{45 b}{2}\right) \left(105 - 45 b\right)}{2 b}\]</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \left(\frac{15 b}{2} + \frac{45}{2}\right) \left(\frac{105 - 45 b}{2 b} + \frac{15 b + 45}{b}\right)\]</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>Horisontal fusjon<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>Anta at bedrift 2 og 3 fusjonerer, og at all produksjon flyttes til bedrift 2. Nå har vi kun to bedrifter igjen i markedet, og vi kan bruke Cournot-modellen med to bedrifter for å finne den nye likevekten.</p>
+<p>Det som skjer da er at den totale produksjonen i markedet blir lik summen av produksjonen til de to bedriftene, og vi kan bruke den samme metoden som før for å finne den nye likevekten.</p>
+<p>Siden bedrift 2 har lavere marginalkostnad enn bedrift 3, så vil den fusjonerte bedriften ha lavere kostnader enn før, og dette vil føre til høyere profitt for de gjenværende bedriftene.</p>
+<p>Se oppsummering av Cournot-modellen med to bedrifter for mer hvordan utregningen blir, og eventuelt endre marginalkostnaden til bedrift 2 hvis etter fusjonen den har høyere eller lavere kostnader enn bedrift 3.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks\7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../6/Seminar_6_-_Prissamarbeid.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Seminar 6: Prissamarbeid</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Seminar_7.2_-_Vertikale_fusjoner_og_integrasjon.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Seminar 7.2: Vertikale fusjoner og integrasjon</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#horisontale-fusjoner-og-fusjonsparadokset">Horisontale fusjoner og fusjonsparadokset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#totalinntekt-og-marginalinntekt">Totalinntekt og marginalinntekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reaksjonsfunksjoner">Reaksjonsfunksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisk-likevekt">Symmetrisk likevekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likevektspris">Likevektspris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profitt">Profitt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#horisontal-fusjon">Horisontal fusjon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Totalinntekt og marginalinntekt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppsummering-av-cournot-modellen-med-to-bedrifter">Oppsummering av cournot-modellen med to bedrifter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#horisontale-fusjoner-og-kostnadssynergier">Horisontale fusjoner og kostnadssynergier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Horisontal fusjon</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

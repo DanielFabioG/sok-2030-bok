@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/6/Seminar_6_-_Prissamarbeid';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Seminar 7.1: Horisontale fusjoner" href="../7/Seminar_7.1_-_Horisonetale_fusjoner.html" />
+    <link rel="next" title="Seminar 7.2: Vertikale fusjoner og integrasjon" href="../7/Seminar_7.2_-_Vertikale_fusjoner_og_integrasjon.html" />
     <link rel="prev" title="Seminar 5.2: Sekvensiell kvantumskonkurranse (Stackelberg med kvantum)" href="../5/Seminar_5.2_-_Sekvensiell_kvantumkonkurranse.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,13 +193,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.1_-_Sekvensiell_priskonkurranse.html">Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.2_-_Sekvensiell_kvantumkonkurranse.html">Seminar 5.2: Sekvensiell kvantumskonkurranse (Stackelberg med kvantum)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Seminar 6: Prissamarbeid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../7/Seminar_7.1_-_Horisonetale_fusjoner.html">Seminar 7.1: Horisontale fusjoner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../7/Seminar_7.2_-_Vertikale_fusjoner.html">Seminar 7.2: Vertikale fusjoner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7/Seminar_7.2_-_Vertikale_fusjoner_og_integrasjon.html">Seminar 7.2: Vertikale fusjoner og integrasjon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html">Løsningsforslag monopol og tredjegrads prisdiskriminering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_2.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_2.html">Løsningsforslag - monopol og produktdifferensiering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_3.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_3.html">Løsningsforslag Cournot modell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_4.3_-_L%C3%B8sningsforslag_-_Bertrand_modell.html">Løsningsforslag Bertrand konkurranse og differensiering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_5.3_-_L%C3%B8sningsforslag_-_sekvensiell_konkurranse.html">Løsningsforslag sekvensiell konkurranse (Stackelberg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_6_L%C3%B8sningsforslag_-Prissamarbeid.html">Løsningsforslag - prissamarbeid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_7.3_L%C3%B8sningsforslag_-Vertikale_fusjoner_og_integrasjon.html">Løsningsforslag- horisontal og vertikal fusjon</a></li>
+
+
+
 </ul>
 
     </div>
@@ -841,7 +845,7 @@ P^* = 150 - 80 = 70
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q1 for å finne reaksjonsfunksjon til bedrift 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q1 for å finne reaksjonsfunksjon til bedrift 2</span>
 <span class="n">q1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt_q1</span><span class="p">,</span> <span class="n">q_1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">q1</span>
 </pre></div>
@@ -854,7 +858,7 @@ P^* = 150 - 80 = 70
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q2 for å finne reaksjonsfunksjon til bedrift 2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Løser for q2 for å finne reaksjonsfunksjon til bedrift 1</span>
 <span class="n">q2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">likevekt_q2</span><span class="p">,</span> <span class="n">q_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">q2</span><span class="p">)</span>
@@ -1231,11 +1235,11 @@ P = 175 – 2Q
       </div>
     </a>
     <a class="right-next"
-       href="../7/Seminar_7.1_-_Horisonetale_fusjoner.html"
+       href="../7/Seminar_7.2_-_Vertikale_fusjoner_og_integrasjon.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Seminar 7.1: Horisontale fusjoner</p>
+        <p class="prev-next-title">Seminar 7.2: Vertikale fusjoner og integrasjon</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

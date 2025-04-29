@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Løsningsforslag monopol og tredjegrads prisdiskriminering" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html" />
-    <link rel="prev" title="Seminar 7.1: Horisontale fusjoner" href="Seminar_7.1_-_Horisonetale_fusjoner.html" />
+    <link rel="prev" title="Seminar 6: Prissamarbeid" href="../6/Seminar_6_-_Prissamarbeid.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,13 +193,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.1_-_Sekvensiell_priskonkurranse.html">Seminar 5.1: Sekvensiell priskonkurranse (Stackelberg med priser)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5/Seminar_5.2_-_Sekvensiell_kvantumkonkurranse.html">Seminar 5.2: Sekvensiell kvantumskonkurranse (Stackelberg med kvantum)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../6/Seminar_6_-_Prissamarbeid.html">Seminar 6: Prissamarbeid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Seminar_7.1_-_Horisonetale_fusjoner.html">Seminar 7.1: Horisontale fusjoner</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Seminar 7.2: Vertikale fusjoner og integrasjon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_1.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_1.html">Løsningsforslag monopol og tredjegrads prisdiskriminering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_2.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_2.html">Løsningsforslag - monopol og produktdifferensiering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_3.3_-_L%C3%B8sningsforslag_p%C3%A5_oppgave_3.html">Løsningsforslag Cournot modell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_4.3_-_L%C3%B8sningsforslag_-_Bertrand_modell.html">Løsningsforslag Bertrand konkurranse og differensiering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_5.3_-_L%C3%B8sningsforslag_-_sekvensiell_konkurranse.html">Løsningsforslag sekvensiell konkurranse (Stackelberg)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_6_L%C3%B8sningsforslag_-Prissamarbeid.html">Løsningsforslag - prissamarbeid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../l%C3%B8sningsforslag/Seminar_7.3_L%C3%B8sningsforslag_-Vertikale_fusjoner_og_integrasjon.html">Løsningsforslag- horisontal og vertikal fusjon</a></li>
+
+
+
 </ul>
 
     </div>
@@ -723,17 +727,6 @@ q_1 = \frac{a - c}{4b}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{a - c}{4 b}\]</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimalt kvantum i sluttmarkedet</span>
 <span class="n">Optimal_kvantum_q1</span> <span class="o">=</span> <span class="n">q1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">Optimal_pris_oppstrom</span><span class="p">)</span>
 
@@ -1097,7 +1090,7 @@ Trinn 2: Nedstrømsbedriftene velger optimalt kvantum og pris i sluttbrukermarke
 </section>
 <section id="monopoltilpasning-for-oppstromsbedriften-m2">
 <h2>Monopoltilpasning for oppstrømsbedriften (<span class="math notranslate nohighlight">\(M2\)</span>)<a class="headerlink" href="#monopoltilpasning-for-oppstromsbedriften-m2" title="Link to this heading">#</a></h2>
-<p>Siden oppstrømsbedriften <span class="math notranslate nohighlight">\(M2\)</span> er eneste tilbyder til nedstrømsbedriften <span class="math notranslate nohighlight">\(R2\)</span> vil vi bedriften opptre som monopolist.</p>
+<p>Siden oppstrømsbedriften <span class="math notranslate nohighlight">\(M2\)</span> er eneste tilbyder til nedstrømsbedriften <span class="math notranslate nohighlight">\(R2\)</span> vil bedriften opptre som monopolist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># W_r2 er invers etterspørsel til M2, så vi bruker den til å finne totalinntekt, men vi må bruke q_M2 i stedet for q_R2</span>
@@ -1347,12 +1340,12 @@ har presentert?</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Seminar_7.1_-_Horisonetale_fusjoner.html"
+       href="../6/Seminar_6_-_Prissamarbeid.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Seminar 7.1: Horisontale fusjoner</p>
+        <p class="prev-next-title">Seminar 6: Prissamarbeid</p>
       </div>
     </a>
     <a class="right-next"

@@ -15,10 +15,12 @@ chapters:
 - file: notebooks/5/Seminar_5.1_-_Sekvensiell_priskonkurranse.ipynb
 - file: notebooks/5/Seminar_5.2_-_Sekvensiell_kvantumkonkurranse.ipynb
 - file: notebooks/6/Seminar_6_-_Prissamarbeid.ipynb
-- file: notebooks/7/Seminar_7.1_-_Horisonetale_fusjoner.ipynb
+- file: notebooks/7/Seminar_7.1_-_Horisontale_fusjoner.ipynb
 - file: notebooks/7/Seminar_7.2_-_Vertikale_fusjoner_og_integrasjon.ipynb
 - file: notebooks/løsningsforslag/Seminar_1.3_-_Løsningsforslag_på_oppgave_1.ipynb
 - file: notebooks/løsningsforslag/Seminar_2.3_-_Løsningsforslag_på_oppgave_2.ipynb
 - file: notebooks/løsningsforslag/Seminar_3.3_-_Løsningsforslag_på_oppgave_3.ipynb
 - file: notebooks/løsningsforslag/Seminar_4.3_-_Løsningsforslag_-_Bertrand_modell.ipynb
 - file: notebooks/løsningsforslag/Seminar_5.3_-_Løsningsforslag_-_sekvensiell_konkurranse.ipynb
+- file: notebooks/løsningsforslag/Seminar_6_Løsningsforslag_-Prissamarbeid.ipynb
+- file: notebooks/løsningsforslag/Seminar_7.3_Løsningsforslag_-Vertikale_fusjoner_og_integrasjon.ipynb

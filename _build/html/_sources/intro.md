@@ -14,6 +14,7 @@ I kurset vil blant annet følgende tema belyses:
 - Markedskonsentrasjon, fusjoner og oppkjøp
 - Vertikale relasjoner
 
+
 ## Innhold
 
 Her vil du finne alle seminarforelesningene, løsningsforslag til oppgaver og eventuelt annen relevant informasjon som er nyttig for dette kurset.
